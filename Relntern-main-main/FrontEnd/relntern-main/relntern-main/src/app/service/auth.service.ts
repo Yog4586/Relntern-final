@@ -39,4 +39,10 @@ export class AuthService {
   postregisterAdmin(registerData: any) {
     return this.http.post(this.base_url + "/signupAdmin", registerData);
   }
+  requestOtp(userJson: any): Observable<any> {
+    return this.http.post<any>(`${this.base_url}/request-otp`, userJson);
+  }
+  verifyOtp(otpData: any): Observable<any> {
+    return this.http.post<any>(`${this.base_url}/verify-otp`, otpData);
+  }
 }

@@ -1,6 +1,7 @@
 package com.reIntern.model;
 
 import jakarta.persistence.Entity;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,6 +15,7 @@ private int id;
 private String username;
 private String password;
 private String role;
+private String otp;
 
 
 public user() {
@@ -22,12 +24,13 @@ public user() {
 }
 
 
-public user(int id, String username, String password, String role) {
+public user(int id, String username, String password, String role, String email,  String otp) {
 	super();
 	this.id = id;
 	this.username = username;
 	this.password = password;
 	this.role = role;
+	this.otp = otp;
 }
 
 
@@ -70,10 +73,16 @@ public void setRole(String role) {
 	this.role = role;
 }
 
+public String getOtp() {
+    return otp;
+}
 
+public void setOtp(String otp) {
+    this.otp = otp;
+}
 @Override
 public String toString() {
-	return "user [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";
+	return "user [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + ", otp=" + otp + "]";
 }
 
 
@@ -81,9 +90,4 @@ public String get(String string) {
 	// TODO Auto-generated method stub
 	return null;
 }
-
-
-
-
-
 }

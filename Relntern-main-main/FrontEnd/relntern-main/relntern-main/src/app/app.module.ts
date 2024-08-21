@@ -44,7 +44,6 @@ import { SignupComponent } from './signup/signup.component';
 import { ClarityModule } from '@clr/angular';
 import { MatMenuModule } from '@angular/material/menu';
 import { TaskStatusComponent } from './task-status/task-status.component';
-import { HeaderComponent } from './header/header.component';
 import { HeadersComponent } from './headers/headers.component';
 import { EndInternshipDialogComponent } from './end-internship-dialog/end-internship-dialog.component';
 import { MentorsignupComponent } from './mentorsignup/mentorsignup.component';
@@ -52,7 +51,8 @@ import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 
 import { RecaptchaModule } from 'ng-recaptcha';
 import { InternmentorlistComponent } from './internmentorlist/internmentorlist.component';
-import { AdminregisterComponent } from './adminregister/adminregister.component'; 
+import { AdminregisterComponent } from './adminregister/adminregister.component';
+import { OtpModalComponent } from './otp-modal/otp-modal.component'; 
 
 
 
@@ -86,13 +86,13 @@ import { AdminregisterComponent } from './adminregister/adminregister.component'
     TaskdeleteComponent,
     SignupComponent,
     TaskStatusComponent,
-    HeaderComponent,
     HeadersComponent,
     EndInternshipDialogComponent,
     MentorsignupComponent,
     AdminsignupComponent,
     InternmentorlistComponent,
-    AdminregisterComponent
+    AdminregisterComponent,
+    OtpModalComponent
   ],
   imports: [
     BrowserModule,

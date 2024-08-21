@@ -12,6 +12,7 @@ public class Role {
     private String username;
     private String password;
     private String role;
+    private String otp;
 
 
     public String getPassword() {
@@ -39,6 +40,13 @@ public class Role {
     public void setRole(String role) {
         this.role = role;
     }
+    public String getOtp() {
+        return otp;
+    }
+    public void setOtp(String otp) {
+        this.otp = otp;
+    }
+
 
     public Role(int id, String username, String password, String role) {
         super();
@@ -53,7 +61,7 @@ public class Role {
     }
     @Override
     public String toString() {
-        return "Role [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";
+        return "Role [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + ",  otp=" + otp + "]";
     }
 
 

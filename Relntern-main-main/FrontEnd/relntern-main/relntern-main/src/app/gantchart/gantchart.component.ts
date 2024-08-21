@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InternService } from '../intern.service';
 import { Router } from '@angular/router';
+import { GanttModule } from '@syncfusion/ej2-angular-gantt';
+
 
 @Component({
   selector: 'app-gantchart',
