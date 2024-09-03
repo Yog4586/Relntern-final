@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { InternService } from '../intern.service';
 import { Router } from '@angular/router';
 import { DialogBodyComponent } from '../dialog-body/dialog-body.component';
+import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -13,13 +14,13 @@ import { ToastrService } from 'ngx-toastr';
 export class UpdateDialogBodyComponent {
   // internUpdate: any;
   mentors: any;
-  matDialog: any;
+  // matDialog: any;
   internDetails: any;
 
   constructor(
     public dialogRef: MatDialogRef<UpdateDialogBodyComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { intern: any }
-    , private internService: InternService, private router: Router,private toastr:ToastrService) {
+    , private internService: InternService, private router: Router,private toastr:ToastrService, private matDialog:MatDialog) {
   }
 
   ngOnInit(): void {
@@ -27,6 +28,7 @@ export class UpdateDialogBodyComponent {
   }
 
   updateIntern(): void {
+    debugger
     this.internService.updateIntern(this.data.intern).subscribe(
       (resp) => {
         console.log(resp);
@@ -67,29 +69,30 @@ export class UpdateDialogBodyComponent {
   //   });
   // }
   
-  moveToInactive(id: any) {
-    this.internService.moveToInactive(id).subscribe(
-      () => {
-        console.log('success');
-        // this.router.navigate(['inactive']);
-        // this.router.navigate(['/list'])
+  // moveToInactive(id: any) {
+  //   this.internService.moveToInactive(id).subscribe(
+  //     () => {
+  //       console.log('success');
+  //       // this.router.navigate(['inactive']);
+  //       // this.router.navigate(['/list'])
         
-        // Remove the intern from the internDetails array
-        this.internDetails = this.internDetails.filter((item: any) => item.id !== id);
+  //       // Remove the intern from the internDetails array
+  //       this.internDetails = this.internDetails.filter((item: any) => item.id !== id);
         
-        // this.closeDialog();
-      },
-      (error) => {
-        console.log('Error moving intern to inactive interns:', error);
-      }
-    );
-  }
+  //       // this.closeDialog();
+  //     },
+  //     (error) => {
+  //       console.log('Error moving intern to inactive interns:', error);
+  //     }
+  //   );
+  // }
 
-  openDialog(intern: any): void {
+  openDialog(internId: any): void {
+    debugger
     this.matDialog.open(DialogBodyComponent, {
       width: '500px',
       height: '140px',
-      data: intern
+      data: internId
     });
   }
   successToastr(){

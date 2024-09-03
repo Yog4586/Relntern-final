@@ -18,8 +18,8 @@
           <th scope="col" class="py-4 px-4 text-white">Association</th>
           <th scope="col" class="py-4 px-4 text-white">View Task</th>
           <th scope="col" class="py-4 px-4 text-white">Update</th>
-          <th scope="col" class="py-4 px-4 text-white">Inactive</th>
-          <th scope="col" class="py-4 px-4 text-white">Delete </th>
+          <!-- <th scope="col" class="py-4 px-4 text-white">Inactive</th> -->
+          <!-- <th scope="col" class="py-4 px-4 text-white">Delete </th> -->
         </tr>
       </thead>
       <tbody>
@@ -31,16 +31,30 @@
           <td class="py-3 px-4" (click)="openProfile(interns)">{{interns.mentor}}</td>
           <td class="py-3 px-4" (click)="openProfile(interns)">{{interns.endDate}}</td>
           <td class="py-3 px-4" (click)="openProfile(interns)">{{interns.association}}</td>
-          <td class="py-2 px-4"><button class="rounded-lg text-lg px-4 py-1 text-center mr-2 text-white btn btn-primary"
-              (click)="gotopage(interns.id)">View Task</button></td>
-          <td class="py-2 px-4" *ngIf="isMentor || isAdmin"><button
+          <td class="py-2 px-4">
+            <i class="fas fa-clipboard-list text-lg cursor-pointer text-blue-700 hover:text-blue-800" 
+               style="font-size: 25px;" 
+               (click)="gotopage(interns.id)" 
+               title="View Task"></i>
+          </td>
+                  
+          <td class="py-2 px-4" *ngIf="isMentor || isAdmin">
+            <i class="far fa-edit text-lg cursor-pointer text-blue-700 hover:text-blue-800" 
+               style="font-size: 25px;" 
+               (click)="openEdit(interns)" 
+               title="Update"></i>
+          </td>
+          
+          <!-- <td class="py-2 px-4" *ngIf="isMentor || isAdmin"><button
               class="rounded-lg text-lg px-4 py-1 text-center mr-2 text-white btn btn-primary"
-              (click)="openEdit(interns)">Update</button></td>
-          <td class="py-2 px-4" *ngIf="isMentor || isAdmin"><button
-              class="rounded-lg text-lg px-4 py-1 text-center mr-2 text-white btn btn-primary"
-              (click)="openDialog(interns.id)">Inactive</button></td>
-          <td class="py-2 px-4"><button class="rounded-lg text-lg px-4 py-1 text-center mr-2 text-white btn btn-primary"
-              (click)="deleteIntern(interns.id)">Delete</button></td>
+              (click)="openDialog(interns.id)">Inactive</button></td> -->
+              <!-- <td class="py-2 px-4">
+                <i class="far fa-trash-alt text-lg cursor-pointer text-red-700 hover:text-red-800" 
+                   style="font-size: 25px;" 
+                   (click)="deleteIntern(interns.id)" 
+                   title="Delete"></i>
+              </td> -->
+              
         </tr>
       </tbody>
     </table>

@@ -56,7 +56,7 @@
             }"
             (click)="endInternship()"
             [disabled]="isInProgress"
-            title="End Internship button will be enabled at your last week or when no task is in-progress">
+            title="End Internship button will be enabled at your last week and when no task is in-progress">
             End Internship
           </button>
           <p *ngIf="isLastWeek && !isInProgress" class="mt-2 text-sm">
@@ -87,12 +87,12 @@
             </thead>
             <tbody class="items-center">
               <tr *ngFor="let tasks of taskdetails" id="view-task-list"
-                class="text-left items-center justify-center bg-slate-300 font-bold">
-                <td class=" px-4">{{ tasks.task }}</td>
-                <td class=" px-4">{{ tasks.description }}</td>
-                <td class=" px-4">{{ tasks.start }}</td>
-                <td class=" px-4">{{ tasks.end }}</td>
-                <td class="py-4 px-4">
+                class="text-center items-center justify-center bg-slate-300 font-bold">
+                <td class="py-3 px-4">{{ tasks.task }}</td>
+                <td class="py-3 px-4">{{ tasks.description }}</td>
+                <td class="py-3 px-4">{{ tasks.start }}</td>
+                <td class="py-3 px-4">{{ tasks.end }}</td>
+                <td class="py-3 px-4">
                   <div
                     class="hover:bg-slate-950 p-1 border-2 border-orange-200 bg-white rounded-lg items-center text-center text-base  text-[#E46A11] font-bold">
                     <u>{{ tasks.status }}</u>

@@ -9,57 +9,62 @@ import { InternprofileComponent } from '../internprofile/internprofile.component
 @Component({
   selector: 'app-headers',
   templateUrl: './headers.component.html',
-  styleUrls: ['./headers.component.css']
+  styleUrls: ['./headers.component.css'],
 })
 export class HeadersComponent implements OnInit {
   internDetails: any;
-  isAdmin: boolean=false;
-  isMentor: boolean=false;
-  isintern: boolean=false;
+  isAdmin: boolean = false;
+  isMentor: boolean = false;
+  isintern: boolean = false;
   roledesc: any;
+  isDropdownVisible: boolean = false;
 
-  constructor(private router: Router, private internService: InternService, private matDialog: MatDialog) {}
+  constructor(
+    private router: Router,
+    private internService: InternService,
+    private matDialog: MatDialog
+  ) {}
 
   isCurrentRoute(route: string): boolean {
     // console.log(this.router.url);
-    return (this.router.url==route);
+    return this.router.url == route;
   }
 
   ngOnInit(): void {
     this.getActiveInterns();
-    this.roledesc=localStorage.getItem("role");
+    this.roledesc = localStorage.getItem('role');
     this.validaterole(this.roledesc);
   }
 
-  validaterole(roledesc:any){
-    if(roledesc=="admin"){
-      this.isAdmin=true;
+  validaterole(roledesc: any) {
+    if (roledesc == 'admin') {
+      this.isAdmin = true;
+    } else if (roledesc == 'mentor') {
+      this.isMentor = true;
+    } else {
+      this.isintern = true;
     }
-    else if(roledesc=="mentor"){
-      this.isMentor=true
-    }
-    else{
-      this.isintern=true;
+  }
+
+  getActiveInterns(): void {
+    this.internService.getActiveInterns().subscribe(
+      (resp) => {
+        console.log(resp);
+        this.internDetails = resp;
+      },
+      (err) => {
+        console.log(err);
       }
-    }
+    );
+  }
 
-    getActiveInterns(): void {
-      this.internService.getActiveInterns().subscribe(
-        (resp) => {
-          console.log(resp);
-          this.internDetails = resp;
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-    }
-
-    logout(){
-      localStorage.removeItem('role')
-      this.router.navigate([``]);
-}
-
+  logout() {
+    localStorage.removeItem('role');
+    this.router.navigate([``]);
+  }
+  toggleDropdown() {
+    this.isDropdownVisible = !this.isDropdownVisible;
+  }
 
   goToPage(page: string): void {
     this.router.navigate([page]);

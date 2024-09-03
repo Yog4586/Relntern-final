@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Intern } from 'src/models/intern.mode';
 import { Task } from 'src/models/task.mode';
+
 
 @Injectable({
   providedIn: 'root',
@@ -13,69 +14,65 @@ export class InternService {
 
   API = 'http://localhost:8081';
 
-  public registerIntern(interndetails: any) {
-    return this.http.post(this.API + '/registerIntern', interndetails);
-  }
-
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   };
 
+  uploadFile(formData: FormData) {
+    throw new Error('Method not implemented.');
+  }
+
+  public registerIntern(interndetails: any) {
+    return this.http.post(this.API + '/registerIntern', interndetails);
+  }
+
   public getInterns() {
     return this.http.get(this.API + '/getInterns');
   }
+
   public getActiveInterns() {
     return this.http.get(this.API + '/getActiveInterns');
   }
+
   public getInActiveInterns() {
     return this.http.get(this.API + '/getInActiveInterns');
   }
-
-  // public deleteIntern(id: number) {
-  //   return this.http.delete(this.API + '/deleteIntern/id' + id);
-  // }
 
   deleteIntern(id: number): Observable<void> {
     return this.http.delete<void>(`http://localhost:8081/deleteIntern?id=${id}`);
   }
 
   public getInternById(id: any) {
-    console.log(id)
-    let url = "http://localhost:8081/viewtask/" + id
-    // console.log(url)
-    return this.http.get<Intern>(url)
+    console.log(id);
+    let url = "http://localhost:8081/viewtask/" + id;
+    return this.http.get<Intern>(url);
   }
 
   public getInternByUserId(userId: any) {
     console.log(userId);
-    let url = "http://localhost:8081/viewByUserId/" + userId
-    console.log(url);
+    let url = "http://localhost:8081/viewByUserId/" + userId;
     return this.http.get<Intern>(url);
   }
 
   public getByMentor(mentoremail: any) {
     console.log(mentoremail);
-
-    let url = "http://localhost:8081/getByMentor/" + mentoremail
+    let url = "http://localhost:8081/getByMentor/" + mentoremail;
     return this.http.get<Intern>(url);
   }
 
   public getActiveByMentor(mentoremail: any) {
     console.log(mentoremail);
-
-    let url = "http://localhost:8081/getActiveByMentor/" + mentoremail
+    let url = "http://localhost:8081/getActiveByMentor/" + mentoremail;
     return this.http.get<Intern>(url);
   }
 
   public getMentorByMentoruserid(userId: any) {
     console.log(userId);
-    let url = "http://localhost:8081/viewByMentoruserid/" + userId
-    console.log(url);
+    let url = "http://localhost:8081/viewByMentoruserid/" + userId;
     return this.http.get<Intern>(url);
   }
-
 
   public updateIntern(intern: any) {
     return this.http.put(this.API + '/updateIntern', intern);
@@ -127,7 +124,6 @@ export class InternService {
     return this.http.put(this.API + '/updateTaskById/' + taskId, taskdetails);
   }
 
-
   public deleteTask(id: any) {
     return this.http.delete(this.API + '/deleteTask?id=' + id);
   }
@@ -138,7 +134,7 @@ export class InternService {
   }
 
   public getDocumentByInternId(internId: any) {
-    return this.http.get(this.API + '/getInternDocument/' + internId)
+    return this.http.get(this.API + '/getInternDocument/' + internId);
   }
 
   public dataSource = new Subject<any>();

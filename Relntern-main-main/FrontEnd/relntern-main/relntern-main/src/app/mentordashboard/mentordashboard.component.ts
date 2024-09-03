@@ -96,5 +96,5 @@ export class MentordashboardComponent implements OnInit {
 
   gotopage(internsId: any): void {
     this.router.navigate(['view-task/', internsId]);
-  }
+  } 
 }

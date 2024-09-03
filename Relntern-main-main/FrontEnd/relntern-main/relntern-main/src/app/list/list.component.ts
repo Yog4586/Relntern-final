@@ -52,13 +52,13 @@ export class ListComponent implements OnInit {
     );
   }
 
-  deleteIntern(internId: number) {
-    this.matDialog.open(DeleteDialogComponent, {
-      width: '500px',
-      height: '140px',
-      data: { id: internId } 
-    });
-  }
+  // deleteIntern(internId: number) {
+  //   this.matDialog.open(DeleteDialogComponent, {
+  //     width: '500px',
+  //     height: '140px',
+  //     data: { id: internId } 
+  //   });
+  // }
 
   openEdit(intern: any): void {
     console.log(intern);
@@ -67,9 +67,12 @@ export class ListComponent implements OnInit {
       height: '700px',
       data: { intern }
     });
+    // this.openDialog(this.internDetails.id)
   }
 
   openDialog(intern: any): void {
+    console.log(intern);
+    
     this.matDialog.open(DialogBodyComponent, {
       width: '500px',
       height: '140px',

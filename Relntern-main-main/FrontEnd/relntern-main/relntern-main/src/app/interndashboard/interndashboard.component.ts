@@ -99,8 +99,8 @@ export class InterndashboardComponent implements OnInit {
 
   endInternship(): void {
     this.matDialog.open(EndInternshipDialogComponent, {
-      width: '500px',
-      height: '140px',
+      width: '600px',
+      height: '350px',
       data: { 
         fullname: this.internDetails.fullname,    // Use the actual intern data from your component
         email: this.internDetails.email,

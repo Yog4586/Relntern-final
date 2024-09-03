@@ -39,7 +39,7 @@
         <mat-form-field appearance="fill" id="taskStatus" name="taskStatus" class="w-4/5 max-h-16">
           <mat-label>Task status:</mat-label>
           <mat-select formControlName="status" id="status" name="status">
-            <mat-option *ngFor="let status of taskStatus" [value]="status">{{status}}</mat-option>
+            <mat-option *ngFor="let status of statusList" [value]="status">{{status}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>

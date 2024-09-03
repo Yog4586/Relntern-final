@@ -52,8 +52,6 @@ import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { InternmentorlistComponent } from './internmentorlist/internmentorlist.component';
 import { AdminregisterComponent } from './adminregister/adminregister.component';
-import { OtpModalComponent } from './otp-modal/otp-modal.component'; 
-
 
 
 
@@ -91,8 +89,7 @@ import { OtpModalComponent } from './otp-modal/otp-modal.component';
     MentorsignupComponent,
     AdminsignupComponent,
     InternmentorlistComponent,
-    AdminregisterComponent,
-    OtpModalComponent
+    AdminregisterComponent
   ],
   imports: [
     BrowserModule,

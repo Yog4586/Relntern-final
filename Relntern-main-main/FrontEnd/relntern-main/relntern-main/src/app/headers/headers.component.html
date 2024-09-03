@@ -9,14 +9,34 @@
       </div>
       <nav>
         <ul class="flex space-x-4 text-black">
-          <li>
-            <a>
-              <h2 class="text-black font-bold py-1 px-4 rounded mt-4 italic">
-                {{ roledesc }}
-              </h2>
-            </a>
+          <div id="Add_Mentor" *ngIf="!isCurrentRoute('/list')">
+            <button type="button" [ngClass]="{
+                    'bg-blue-500 hover:bg-blue-700': !isCurrentRoute('/list'),
+                    'bg-blue-700': isCurrentRoute('/list')
+                  }" class="text-white font-bold py-2 px-4 rounded mt-5" (click)="goToPage('list')">
+              Active Interns
+            </button>
+          </div>
+          
+          <div id="Add_Mentor" *ngIf="!isCurrentRoute('/mentorlist')">
+            <button type="button" [ngClass]="{
+                    'bg-blue-500 hover:bg-blue-700': !isCurrentRoute('/mentorlist'),
+                    'bg-blue-700': isCurrentRoute('/mentorlist')
+                  }" class="text-white font-bold py-2 px-4 rounded mt-5" (click)="goToPage('mentorlist')">
+              Mentor List
+            </button>
+          </div>
+          
+          <li id="Add_Mentor" *ngIf="!isCurrentRoute('/inactive') && (isMentor || isAdmin)">
+            <button type="button" [ngClass]="{
+                  'bg-blue-500 hover:bg-blue-700': !isCurrentRoute('/inactive'),
+                  'bg-blue-700': isCurrentRoute('/inactive')
+                }" class="text-white font-bold py-2 px-4 rounded mt-5" (click)="goToPage('inactive')">
+              Past Interns
+            </button>
           </li>
-          <div id="Add_Mentor">
+          
+          <!-- <div id="Add_Mentor">
             <button type="button" [ngClass]="{
                     'bg-blue-500 hover:bg-blue-700': !isCurrentRoute('/list'),
                     'bg-blue-700': isCurrentRoute('/list')
@@ -43,12 +63,27 @@
               *ngIf="isMentor || isAdmin">
               Past Interns
             </button>
-          </li>
+          </li> -->
 
           <div>
-            <i class="fas fa-sign-out-alt py-0.5 px-1 mt-4 text-red-700 hover:text-red-800 cursor-pointer"
+            <i class="fas fa-sign-out-alt py-0.5 px-1 mt-5 text-red-700 hover:text-red-800 cursor-pointer"
               style="font-size: 35px;" alt="Logout" (click)="logout()" title="Logout"></i>
           </div>
+          <!-- <li>
+            <a>
+              <h2 class="text-black font-bold py-1 px-4 rounded mt-4 italic">
+                {{ roledesc }}
+              </h2>
+            </a>
+          </li> -->
+          <li>
+            <a>
+              <h2 class="text-black font-bold py-1 px-4 rounded mt-5 italic">
+                <i class="far fa-user-circle" style="font-size: 35px;"></i>
+                {{ roledesc }}
+              </h2>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>

@@ -144,7 +144,8 @@
             <div class="" >
                 <div class="mt-6 flex">
                     <div class="flex mr-auto">
-                        <button type="submit" class="btn btn-outline-primary" (click)="moveToInactive(data.intern.id)">Move to Inactive</button>
+                        <button *ngIf="data?.intern?.id" type="submit" class="btn btn-outline-primary" (click)="openDialog(data.intern.id)">Move to Inactive</button>
+
                     </div>
                     <div class="flex space-x-6 text-black justify-end"  >
                          <button type="submit" class="btn btn-outline-primary" id="save-changes" >Save
