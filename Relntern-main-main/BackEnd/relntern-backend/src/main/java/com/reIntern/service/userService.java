@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+//logic implementation in service (OTP generation and verification logic is implemented.)
 @Service
 public class userService {
 
@@ -34,7 +35,7 @@ public class userService {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setTo(username);  // Username is the email
             message.setSubject("Your OTP Code");
-            message.setText("Your OTP code is " + otp);
+            message.setText("Your OTP code is " + otp); // message.setText(EmailUtils.getOtpEmailMessage(username, otp));  // Using the utility method here
 
             mailSender.send(message);
         }
@@ -46,16 +47,16 @@ public class userService {
         if (user != null && user.getOtp().equals(otp)) {
             user.setOtp(null);  // Clear OTP after successful verification
             userRepositry.save(user);
-            Map<String, String> obj=new HashMap<>();
-            obj.put("role", user.getRole());
-            return obj;
+            Map<String, String> obj=new HashMap<>();//Use void if you don't need to return any information and the method's only purpose is to perform actions like verifying the OTP and updating the database.
+            obj.put("role", user.getRole()); //  Use boolean if you want to indicate success or failure without returning specific data.
+            return obj; //Keep the Map if you need to return data, such as the user's role, to the caller.
         }
         return null;
     }
 
     // Helper method to generate a 5-digit OTP
     private String generateOtp() {
-        Random random = new Random();
+        Random random = new Random(); // Use of Random class to generate otp
         int otp = 10000 + random.nextInt(90000);
         return String.valueOf(otp);
     }

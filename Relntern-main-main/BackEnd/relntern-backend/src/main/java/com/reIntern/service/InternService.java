@@ -117,5 +117,4 @@ public class InternService {
 			internRepository.save(intern);
 		}
 	}
-
 }

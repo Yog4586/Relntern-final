@@ -4,14 +4,14 @@ import java.sql.Date;
 
 public class EmailUtils {
 	
-    public static String getOtpEmailMessage(String username, String otpCode) {
-        return "Dear " + username + ",\n\n"
-                + "Your One-Time Password (OTP) for login is: " + otpCode + "\n\n"
-                + "Please use this OTP to complete your login process.\n\n"
-                + "If you did not request this OTP, please ignore this email.\n\n"
-                + "Thank you,\n"
-                + "Reliance Industries Ltd";
-    }
+//    public static String getOtpEmailMessage(String username, String otpCode) {
+//        return "Dear " + username + ",\n\n"
+//                + "Your One-Time Password (OTP) for login is: " + otpCode + "\n\n"
+//                + "Please use this OTP to complete your login process.\n\n"
+//                + "If you did not request this OTP, please ignore this email.\n\n"
+//                + "Thank you,\n"
+//                + "Reliance Industries Ltd";
+//    }
 
 	public static String getEmailMessage(String fullname, String association, String projectname, String mentor,
 			Date startdate, Date enddate) {

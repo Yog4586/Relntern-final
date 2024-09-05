@@ -1,6 +1,7 @@
 package com.reIntern.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+// userRepositry is responsible for interacting with the database. It provides methods for performing CRUD (Create, Read, Update, Delete) operations on the user entity in the database.
 
 import com.reIntern.model.user;
 
