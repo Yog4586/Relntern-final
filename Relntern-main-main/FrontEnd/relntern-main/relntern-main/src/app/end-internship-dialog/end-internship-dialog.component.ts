@@ -96,24 +96,42 @@ export class EndInternshipDialogComponent {
   onSubmit(): void { 
     console.log(this.data);
     const emailDetails = {
+      id: this.data.id,
       fullname: this.data.fullname,
       email: this.data.email,
       startDate: this.data.startDate,
       endDate: this.data.endDate,
       domainId: this.data.domainId,
       projectname: this.data.projectname,
-      mentor: this.data.mentor
+      mentor: this.data.mentor,
+      association: this.data.association
     };
-
+  
+    // Send email details to mentor
     this.internService.sendToMentor(emailDetails).subscribe(
       response => {
         console.log('Email sent successfully');
-        // Handle success, e.g., close the dialog
+        // Optionally, you can add additional logic here if needed
       },
       error => {
         console.error('Error sending email', error);
         // Handle error
       }
     );
+  
+    // New addition: Send intern details to incoming_request table
+    this.internService.sendInternDetails(emailDetails).subscribe(
+      response => {
+        console.log('Intern details sent successfully');
+        // Optionally, you can add additional logic here if needed
+      },
+      error => {
+        console.error('Error sending intern details', error);
+        // Handle error
+      }
+    );
+  
+    // Optionally, close the dialog or perform other actions after submitting
   }
+
 }

@@ -102,6 +102,7 @@ export class InterndashboardComponent implements OnInit {
       width: '600px',
       height: '350px',
       data: { 
+        id: this.internDetails.id,
         fullname: this.internDetails.fullname,    // Use the actual intern data from your component
         email: this.internDetails.email,
         startDate: this.internDetails.startDate,
@@ -109,6 +110,7 @@ export class InterndashboardComponent implements OnInit {
         domainId: this.internDetails.domainId,
         projectname: this.internDetails.projectname,
         mentor: this.internDetails.mentor,
+        association: this.internDetails.association,
         message: "To end your internship you have to upload your internship files below."
       }
     });
