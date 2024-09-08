@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { InternService } from '../intern.service'; // Adjust the path as necessary
 
 interface FileData {
+  file: File; // Use the actual File object
   name: string;
   url: string;
 }
@@ -47,7 +48,7 @@ export class EndInternshipDialogComponent {
       files.forEach(file => {
         if (this.validateFile(file, type)) {
           const fileUrl = URL.createObjectURL(file);
-          const fileData: FileData = { name: file.name, url: fileUrl };
+          const fileData: FileData = { file, name: file.name, url: fileUrl };
 
           this.fileMapping[type].files.push(fileData);
         }
@@ -91,10 +92,11 @@ export class EndInternshipDialogComponent {
       this.fileMapping['presentation'].files.length > 0
     );
   }
-  
 
   onSubmit(): void { 
     console.log(this.data);
+  
+    // Email details for sending to the mentor
     const emailDetails = {
       id: this.data.id,
       fullname: this.data.fullname,
@@ -107,31 +109,49 @@ export class EndInternshipDialogComponent {
       association: this.data.association
     };
   
-    // Send email details to mentor
+    // Create FormData to include files and other details
+    const formData = new FormData();
+    formData.append('id', emailDetails.id);
+    formData.append('fullname', emailDetails.fullname);
+    formData.append('association', emailDetails.association);
+    formData.append('endDate', emailDetails.endDate);
+  
+    // Flatten all file arrays into a single array
+    const allFiles: FileData[] = [
+      ...this.fileMapping.pdf.files,
+      ...this.fileMapping.presentation.files,
+      ...this.fileMapping.zip.files,
+      ...this.fileMapping.txt.files
+    ];
+  
+    // Append each file to FormData
+    allFiles.forEach((fileData: FileData) => {
+      console.log("Appending file to formData:", fileData.name);
+      formData.append('uploads', fileData.file); // Key must match backend parameter
+    });
+  
+    // Send the email details to the mentor
     this.internService.sendToMentor(emailDetails).subscribe(
       response => {
         console.log('Email sent successfully');
-        // Optionally, you can add additional logic here if needed
       },
       error => {
         console.error('Error sending email', error);
-        // Handle error
       }
     );
   
-    // New addition: Send intern details to incoming_request table
-    this.internService.sendInternDetails(emailDetails).subscribe(
+    // Send intern details along with uploaded files to the backend
+    this.internService.sendInternDetails(formData).subscribe(
       response => {
-        console.log('Intern details sent successfully');
-        // Optionally, you can add additional logic here if needed
+        console.log('Intern details with files sent successfully');
+        // Optionally close the dialog or handle success logic
       },
       error => {
-        console.error('Error sending intern details', error);
-        // Handle error
+        console.error('Error sending intern details with files', error);
       }
     );
-  
-    // Optionally, close the dialog or perform other actions after submitting
   }
-
+  
+  
+  
 }

@@ -167,7 +167,8 @@ export class InternService {
     return this.http.get(this.API + '/getAdmins');
   }
 
-  public sendInternDetails(details: any): Observable<any> {
-    return this.http.post(this.API + '/incoming-request/add', details, this.httpOptions);
+  public sendInternDetails(formData: FormData): Observable<any> {
+    return this.http.post(this.API + '/incoming-request/add', formData);
   }
+  
 }
