@@ -97,6 +97,10 @@
             ],
             "scripts": [
               "node_modules/chart.js/dist/chart.js"
+            ],
+            "assets": [
+             "src/assets",
+             "node_modules/flowbite/dist"
             ]
           }
         }
