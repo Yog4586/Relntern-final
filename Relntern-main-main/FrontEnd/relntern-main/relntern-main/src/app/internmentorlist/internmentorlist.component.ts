@@ -27,7 +27,7 @@ export class InternmentorlistComponent implements OnInit {
 
   ngOnInit(): void {
     this.roledesc = localStorage.getItem("role");
-    this.mentorEmail = localStorage.getItem("mentorEmail"); // Assume mentor's email is stored in localStorage
+    this.mentorEmail = localStorage.getItem("username"); // Assume mentor's email is stored in localStorage
     this.validaterole(this.roledesc);
 
      if (this.isMentor && this.mentorEmail) {

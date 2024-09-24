@@ -19,6 +19,9 @@ interface FileMapping {
   styleUrls: ['./end-internship-dialog.component.css']
 })
 export class EndInternshipDialogComponent {
+  isLoading: boolean = false; // Initialize loading state
+  isSuccess: boolean = false; // Initialize success state
+
   fileMapping: {
     pdf: FileMapping;
     presentation: FileMapping;
@@ -94,64 +97,65 @@ export class EndInternshipDialogComponent {
   }
 
   onSubmit(): void { 
+    this.isLoading = true; // Set loading state to true
     console.log(this.data);
   
-    // Email details for sending to the mentor
+    // Create an object with the intern details
     const emailDetails = {
-      id: this.data.id,
-      fullname: this.data.fullname,
-      email: this.data.email,
-      startDate: this.data.startDate,
-      endDate: this.data.endDate,
-      domainId: this.data.domainId,
-      projectname: this.data.projectname,
-      mentor: this.data.mentor,
-      association: this.data.association
+        id: this.data.id,
+        fullname: this.data.fullname,
+        email: this.data.email,
+        startDate: this.data.startDate,
+        endDate: this.data.endDate,
+        domainId: this.data.domainId,
+        projectname: this.data.projectname,
+        mentor: this.data.mentor,
+        association: this.data.association
     };
   
-    // Create FormData to include files and other details
+    // Create FormData to include files and intern details
     const formData = new FormData();
-    formData.append('id', emailDetails.id);
+    formData.append('id', emailDetails.id.toString());
     formData.append('fullname', emailDetails.fullname);
     formData.append('association', emailDetails.association);
     formData.append('endDate', emailDetails.endDate);
   
-    // Flatten all file arrays into a single array
+    // Append each file to FormData
     const allFiles: FileData[] = [
-      ...this.fileMapping.pdf.files,
-      ...this.fileMapping.presentation.files,
-      ...this.fileMapping.zip.files,
-      ...this.fileMapping.txt.files
+        ...this.fileMapping.pdf.files,
+        ...this.fileMapping.presentation.files,
+        ...this.fileMapping.zip.files,
+        ...this.fileMapping.txt.files
     ];
   
-    // Append each file to FormData
+    // Append all files to FormData with the key 'uploads'
     allFiles.forEach((fileData: FileData) => {
-      console.log("Appending file to formData:", fileData.name);
-      formData.append('uploads', fileData.file); // Key must match backend parameter
+        console.log("Appending file to formData:", fileData.name);
+        formData.append('uploads', fileData.file);
     });
   
     // Send the email details to the mentor
     this.internService.sendToMentor(emailDetails).subscribe(
-      response => {
-        console.log('Email sent successfully');
-      },
-      error => {
-        console.error('Error sending email', error);
-      }
+        response => {
+            console.log('Email sent successfully');
+        },
+        error => {
+            console.error('Error sending email', error);
+        }
     );
   
     // Send intern details along with uploaded files to the backend
-    this.internService.sendInternDetails(formData).subscribe(
-      response => {
-        console.log('Intern details with files sent successfully');
-        // Optionally close the dialog or handle success logic
-      },
-      error => {
-        console.error('Error sending intern details with files', error);
-      }
+    this.internService.uploadFile(formData).subscribe(
+        response => {
+            console.log('Intern details with files sent successfully');
+            this.isLoading = false; // Reset loading state
+            this.isSuccess = true; // Set success state
+            // Optionally close the dialog or handle success logic
+        },
+        error => {
+            console.error('Error sending intern details with files', error);
+            this.isLoading = false; // Reset loading state
+        }
     );
-  }
-  
-  
-  
+}
 }

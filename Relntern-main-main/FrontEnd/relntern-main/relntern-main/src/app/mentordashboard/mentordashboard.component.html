@@ -71,12 +71,44 @@
               <th scope="col" class="py-4 px-4 text-white">Full Name</th>
               <th scope="col" class="py-4 px-4 text-white">End Date</th>
               <th scope="col" class="py-4 px-4 text-white">Association</th>
-              <!-- <th scope="col" class="py-4 px-4 text-white">View Task</th> -->
-              <!-- <th scope="col" class="py-4 px-4 text-white">Update</th> -->
               <th scope="col" class="py-4 px-4 text-white">Uploads</th>
             </tr>
           </thead>
-          <!-- <tbody>
+          <tbody>
+            <tr *ngFor="let request of incomingRequests">
+              <td class="py-4 px-4">{{ request.id }}</td>
+              <td class="py-4 px-4">{{ request.fullname }}</td>
+              <td class="py-4 px-4">{{ request.endDate }}</td>
+              <td class="py-4 px-4">{{ request.association }}</td>   
+              <td class="py-4 px-4">
+                <div *ngIf="request.uploads">
+                  <ng-container *ngFor="let file of request.uploads.split(',')">
+                    <!-- Updated API endpoint -->
+                    <a [href]="'http://localhost:8081/incoming-request/files/' + file" target="_blank">{{ file }}</a><br />
+                  </ng-container>
+                </div>
+              </td>                             
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="m-4"></span>
+    </div>
+  </main>
+</body>
+
+<footer class="p-4 bg-white md:p-8 dark:bg-gray-800 mt-12">
+  <div class="mx-auto max-w-screen-xl text-center">
+    <p class="text-gray-500 dark:text-gray-400">Relntern - Managing made easy</p>
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023-2026 <a href="#"
+        class="hover:underline">Relntern</a>. For Interns, By Interns.</span>
+  </div>
+</footer>
+
+</html>
+              <!-- <th scope="col" class="py-4 px-4 text-white">View Task</th> -->
+              <!-- <th scope="col" class="py-4 px-4 text-white">Update</th> -->
+                         <!-- <tbody>
             <tr *ngFor="let intern of internDetails" class="text-center items-center justify-center font-bold">
               <td class="py-3 px-4">{{ intern.id }}</td>
               <td class="py-3 px-4 cursor-pointer" (click)="openProfile(intern)">{{ intern.fullname }}</td>
@@ -95,19 +127,14 @@
               </td>
             </tr>
           </tbody> -->
-        </table>
-      </div>
-      <span class="m-4"></span>
-    </div>
-  </main>
-</body>
-
-<footer class="p-4 bg-white md:p-8 dark:bg-gray-800 mt-12">
-  <div class="mx-auto max-w-screen-xl text-center">
-    <p class="text-gray-500 dark:text-gray-400">Relntern - Managing made easy</p>
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023-2026 <a href="#"
-        class="hover:underline">Relntern</a>. For Interns, By Interns.</span>
-  </div>
-</footer>
-
-</html>
+          <!-- <td class="py-4 px-4">
+            <ng-container *ngIf="request.uploads">
+              <ng-container *ngFor="let file of request.uploads.split(','); let i = index">
+                <ng-container *ngIf="file">
+                  <a [href]="getFileUrl(file.trim())" target="_blank" rel="noopener noreferrer">
+                    {{ file.trim() }}
+                  </a><br/>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </td>   -->

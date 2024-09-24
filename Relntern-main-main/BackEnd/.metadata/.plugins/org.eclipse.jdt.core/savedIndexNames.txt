@@ -57,7 +57,6 @@ INDEX VERSION 1.134+C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main
 1167257372.index
 1596916708.index
 988951239.index
-2106207863.index
 4129934991.index
 1650176006.index
 4114894624.index

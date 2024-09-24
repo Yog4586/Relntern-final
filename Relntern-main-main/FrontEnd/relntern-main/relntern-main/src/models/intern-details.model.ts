@@ -9,4 +9,6 @@ export interface InternDetails {
   startDate: Date;
   endDate: Date;
   association: string;
+  uploads: string;
+  filename: string;
 }

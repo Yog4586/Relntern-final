@@ -20,10 +20,6 @@ export class InternService {
     })
   };
 
-  uploadFile(formData: FormData) {
-    throw new Error('Method not implemented.');
-  }
-
   public registerIntern(interndetails: any) {
     return this.http.post(this.API + '/registerIntern', interndetails);
   }
@@ -171,4 +167,15 @@ export class InternService {
     return this.http.post(this.API + '/incoming-request/add', formData);
   }
   
+  public getIncomingRequests(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API}/incoming-request/all`);
+  }
+
+  public uploadFile(formData: FormData): Observable<any> {
+    return this.http.post(`${this.API}/upload`, formData, {
+        reportProgress: true,
+        observe: 'events',
+    });
+}
+
 }

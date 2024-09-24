@@ -16,6 +16,7 @@ export class MentordashboardComponent implements OnInit {
   mentorDetails: any;
   mentoruserid: any;
   internDetails: any;
+  incomingRequests: any[] = [];  // New field to store incoming requests
   isAdmin: boolean = false;
   isMentor: boolean = false;
   roledesc: any;
@@ -36,6 +37,7 @@ export class MentordashboardComponent implements OnInit {
     }
 
     this.getActiveInterns();
+    this.getIncomingRequests();  // Fetch incoming requests on component initialization
   }
 
   getMentorByUserId(): void {
@@ -61,6 +63,21 @@ export class MentordashboardComponent implements OnInit {
     );
   }
 
+  // New method to fetch incoming requests
+  getIncomingRequests(): void {
+    this.internService.getIncomingRequests().subscribe(
+      (resp) => {
+        this.incomingRequests = resp;
+        console.log('Incoming requests:', this.incomingRequests);  // Debugging purpose
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
+  }
+  getFileUrl(fileName: string): string {
+    return `http://localhost:8081/incoming-request/all/${fileName}`; 
+  }
   openProfile(intern: any): void {
     this.matDialog.open(InternprofileComponent, {
       width: '600px',
@@ -96,5 +113,5 @@ export class MentordashboardComponent implements OnInit {
 
   gotopage(internsId: any): void {
     this.router.navigate(['view-task/', internsId]);
-  } 
+  }
 }

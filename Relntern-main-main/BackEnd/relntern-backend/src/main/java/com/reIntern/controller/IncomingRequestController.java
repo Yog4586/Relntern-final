@@ -1,11 +1,10 @@
 package com.reIntern.controller;
 
+import com.reIntern.model.FileUpload;
 import com.reIntern.model.IncomingRequest;
+import com.reIntern.service.FileUploadService;
 import com.reIntern.service.IncomingRequestService;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +13,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/incoming-request")
-@CrossOrigin(allowedHeaders = "*", origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class IncomingRequestController {
 
     @Autowired
     private IncomingRequestService incomingRequestService;
+
+    @Autowired
+    private FileUploadService fileUploadService;
 
     @PostMapping("/add")
     public void addIncomingRequest(
@@ -34,35 +36,28 @@ public class IncomingRequestController {
         incomingRequest.setAssociation(association);
         incomingRequest.setEndDate(endDate);
 
-        // To store the uploaded file paths
-        StringBuilder uploadPaths = new StringBuilder();
+        // Save IncomingRequest first
+        IncomingRequest savedRequest = incomingRequestService.saveIncomingRequest(incomingRequest);
 
-        // Loop through each file in the uploads list and store it
+        // Loop through each file in the uploads list and store them
         for (MultipartFile file : uploads) {
-            // Logging the file name
-            System.out.println("Received file: " + file.getOriginalFilename());
-
             try {
-                // Define the directory where you want to save the files
-                Path path = Paths.get("uploads/" + file.getOriginalFilename());
+                FileUpload fileUpload = new FileUpload();
+                fileUpload.setFileName(file.getOriginalFilename());
+                fileUpload.setFileData(file.getBytes());
+                fileUpload.setIncomingRequest(savedRequest); // Link to IncomingRequest
 
-                // Create directories if they don't exist
-                Files.createDirectories(path.getParent());
-
-                // Save the file to the defined path
-                Files.write(path, file.getBytes());
-
-                // Append the saved file's path to the uploadPaths StringBuilder
-                uploadPaths.append(path.toString()).append(",");
+                // Save the file to the database
+                fileUploadService.saveFileUpload(fileUpload);
             } catch (Exception e) {
-                e.printStackTrace();  // Log or handle the exception appropriately
+                e.printStackTrace();  // Handle the exception appropriately
             }
         }
+    }
 
-        // Set the saved file paths (comma-separated) to the uploads field of IncomingRequest
-        incomingRequest.setUploads(uploadPaths.toString());
-
-        // Save the IncomingRequest entity to the database
-        incomingRequestService.saveIncomingRequest(incomingRequest);
+    // Endpoint to get all incoming requests
+    @GetMapping("/all")
+    public List<IncomingRequest> getAllIncomingRequests() {
+        return incomingRequestService.getAllIncomingRequests();
     }
 }

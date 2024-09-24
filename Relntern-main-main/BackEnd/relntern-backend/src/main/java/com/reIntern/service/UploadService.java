@@ -7,6 +7,8 @@ import com.reIntern.model.upload;
 import com.reIntern.repository.UploadRepository;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @Service
 public class UploadService {
@@ -15,17 +17,16 @@ public class UploadService {
     private UploadRepository uploadRepository;
 
     public upload uploadFile(MultipartFile file, String fileType, int internId) {
-        // Logic to handle file upload and save details to the database
-
         String fileName = file.getOriginalFilename();
-        String filePath = "uploads/" + fileType + "/" + fileName;
 
         try {
-            file.transferTo(new File(filePath));
+            // Save file data directly to the database
             upload uploadedFile = new upload();
             uploadedFile.setFileName(fileName);
             uploadedFile.setFileType(fileType);
             uploadedFile.setInternId(internId);
+            uploadedFile.setFileData(file.getBytes()); // Store the file as bytes
+
             return uploadRepository.save(uploadedFile);
         } catch (IOException e) {
             e.printStackTrace();
