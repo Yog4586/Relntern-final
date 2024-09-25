@@ -23,9 +23,13 @@ import { MentorsignupComponent } from './mentorsignup/mentorsignup.component';
 import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 import { InternmentorlistComponent } from './internmentorlist/internmentorlist.component';
 import { AdminregisterComponent } from './adminregister/adminregister.component';
+import { EndInternshipDialogComponent } from './end-internship-dialog/end-internship-dialog.component';
+import { UploadFilesComponent } from './upload-files/upload-files.component';
 const routes: Routes = [
   { path: '',redirectTo:"login",pathMatch:"full" }, /**/
-  {path: 'login',component:LoginComponent },  /**/
+  {path: 'login',component:LoginComponent },  /**/ 
+   {path: 'upload',component:UploadFilesComponent },  
+
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' }},
   { path: 'add', component: AddComponent , canActivate: [AuthGuard], data: { expectedRole: ['admin','mentor'] } },
   { path: 'list', component: ListComponent,canActivate: [AuthGuard], data: { expectedRole: ['admin','mentor'] }},

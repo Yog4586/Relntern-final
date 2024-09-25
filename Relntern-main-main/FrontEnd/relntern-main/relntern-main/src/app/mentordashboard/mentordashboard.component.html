@@ -79,21 +79,15 @@
               <td class="py-4 px-4">{{ request.id }}</td>
               <td class="py-4 px-4">{{ request.fullname }}</td>
               <td class="py-4 px-4">{{ request.endDate }}</td>
-              <td class="py-4 px-4">{{ request.association }}</td>   
-              <td class="py-4 px-4">
-                <div *ngIf="request.uploads">
-                  <ng-container *ngFor="let file of request.uploads.split(',')">
-                    <!-- Updated API endpoint -->
-                    <a [href]="'http://localhost:8081/incoming-request/files/' + file" target="_blank">{{ file }}</a><br />
-                  </ng-container>
-                </div>
-              </td>                             
+              <td class="py-4 px-4">{{ request.association }}</td> 
+              <td class="py-4 px-4">{{ request.uploads }}</td>   
             </tr>
           </tbody>
         </table>
       </div>
       <span class="m-4"></span>
     </div>
+    
   </main>
 </body>
 

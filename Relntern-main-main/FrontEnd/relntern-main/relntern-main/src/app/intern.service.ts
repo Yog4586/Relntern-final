@@ -171,8 +171,12 @@ export class InternService {
     return this.http.get<any[]>(`${this.API}/incoming-request/all`);
   }
 
+  public getFileUploads(): Observable<any> {
+    return this.http.get<any>(`${this.API}/incoming-request/file-uploads`);  // Replace with your actual endpoint
+  }
+
   public uploadFile(formData: FormData): Observable<any> {
-    return this.http.post(`${this.API}/upload`, formData, {
+    return this.http.post(`${this.API}/incoming-request/add`, formData, {
         reportProgress: true,
         observe: 'events',
     });
