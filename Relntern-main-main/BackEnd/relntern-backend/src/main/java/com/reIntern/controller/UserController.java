@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 //UserController is responsible for handling incoming HTTP requests from the client (like your Angular frontend).It processes these requests, often by invoking methods from the service layer (e.g., userService), and then returns a response to the client.
 @RestController //class handles HTTP requests and returns data in JSON or XML format.
 @RequestMapping("/user")
-@CrossOrigin(allowedHeaders = "*", origins = "http://localhost:4200")
+@CrossOrigin( origins = "http://localhost:4200")
 public class UserController {
 
     @Autowired

@@ -79,13 +79,23 @@
               <td class="py-4 px-4">{{ request.id }}</td>
               <td class="py-4 px-4">{{ request.fullname }}</td>
               <td class="py-4 px-4">{{ request.endDate }}</td>
-              <td class="py-4 px-4">{{ request.association }}</td> 
-              <td class="py-4 px-4">{{ request.uploads }}</td>   
+              <td class="py-4 px-4">{{ request.association }}</td>
+              <td class="py-4 px-4">
+                <div *ngIf="request.filess && request.filess.length > 0">
+                  <ul>
+                    <li *ngFor="let file of request.filess">
+                      <a [href]="getFileUrl(file.fileName)" target="_blank" class="text-blue-600 underline">{{ file.fileName }}</a>
+                    </li>
+                  </ul>
+                </div>
+                <div *ngIf="!request.filess || request.filess.length === 0">
+                  No files uploaded.
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <span class="m-4"></span>
     </div>
     
   </main>

@@ -23,7 +23,7 @@ import com.reIntern.service.TaskService;
 
 @RestController
 //@CrossOrigin(origins = "http://localhost:4200")
-@CrossOrigin(allowedHeaders = "*", origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TaskController {
 
     @Autowired

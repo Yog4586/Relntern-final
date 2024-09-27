@@ -182,4 +182,9 @@ export class InternService {
     });
 }
 
+  // New method to get file URL (if needed in the future)
+  public getFileUrl(fileName: string): string {
+    return `${this.API}/incoming-request/files/${fileName}`;
+  }
+
 }

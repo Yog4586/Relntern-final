@@ -28,7 +28,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(allowedHeaders = "*", origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class RoleController {
 
 	@Autowired

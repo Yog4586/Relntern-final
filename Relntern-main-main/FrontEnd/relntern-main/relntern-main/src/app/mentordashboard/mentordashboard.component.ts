@@ -63,7 +63,7 @@ export class MentordashboardComponent implements OnInit {
     );
   }
 
-  // New method to fetch incoming requests
+  // Fetch incoming requests and associated files
   getIncomingRequests(): void {
     this.internService.getIncomingRequests().subscribe(
       (resp) => {
@@ -75,9 +75,12 @@ export class MentordashboardComponent implements OnInit {
       }
     );
   }
+
+  // Generate URL to download the file
   getFileUrl(fileName: string): string {
-    return `http://localhost:8081/incoming-request/all/${fileName}`; 
+    return `http://localhost:8081/incoming-request/files/${fileName}`;
   }
+
   openProfile(intern: any): void {
     this.matDialog.open(InternprofileComponent, {
       width: '600px',
