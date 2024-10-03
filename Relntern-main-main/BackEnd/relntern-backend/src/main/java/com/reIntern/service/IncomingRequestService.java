@@ -19,6 +19,7 @@ public class IncomingRequestService {
     }
 
     public List<IncomingRequest> getAllIncomingRequests() {
-        return incomingRequestRepository.findAll();
+        List<IncomingRequest> z =  incomingRequestRepository.findAll();
+        return z;
     }
 }

@@ -62,41 +62,36 @@
     </div>
     <h2 class="text-2xl font-bold mb-4 mt-4">Incoming Request</h2>
 
-    <div class="container mx-auto mt-4 px-4">
-      <div id="table-div" class="bg-white rounded-xl shadow-lg overflow-x-auto">
-        <table class="min-w-full text-center">
-          <thead>
-            <tr class="bg-slate-700 text-center text-lg">
-              <th scope="col" class="py-4 px-4 text-white">Intern ID</th>
-              <th scope="col" class="py-4 px-4 text-white">Full Name</th>
-              <th scope="col" class="py-4 px-4 text-white">End Date</th>
-              <th scope="col" class="py-4 px-4 text-white">Association</th>
-              <th scope="col" class="py-4 px-4 text-white">Uploads</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let request of incomingRequests">
-              <td class="py-4 px-4">{{ request.id }}</td>
-              <td class="py-4 px-4">{{ request.fullname }}</td>
-              <td class="py-4 px-4">{{ request.endDate }}</td>
-              <td class="py-4 px-4">{{ request.association }}</td>
-              <td class="py-4 px-4">
-                <div *ngIf="request.filess && request.filess.length > 0">
-                  <ul>
-                    <li *ngFor="let file of request.filess">
-                      <a [href]="getFileUrl(file.fileName)" target="_blank" class="text-blue-600 underline">{{ file.fileName }}</a>
-                    </li>
-                  </ul>
-                </div>
-                <div *ngIf="!request.filess || request.filess.length === 0">
-                  No files uploaded.
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <table class="min-w-full text-center">
+      <thead>
+        <tr class="bg-slate-700 text-center text-lg">
+          <th scope="col" class="py-4 px-4 text-white">Intern ID</th>
+          <th scope="col" class="py-4 px-4 text-white">Full Name</th>
+          <th scope="col" class="py-4 px-4 text-white">End Date</th>
+          <th scope="col" class="py-4 px-4 text-white">Association</th>
+          <th scope="col" class="py-4 px-4 text-white">Uploads</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of incomingRequests">
+          <td class="py-4 px-4">{{ request.id }}</td>
+          <td class="py-4 px-4">{{ request.fullname }}</td>
+          <td class="py-4 px-4">{{ request.endDate }}</td>
+          <td class="py-4 px-4">{{ request.association }}</td>
+          <td class="py-4 px-4">
+            <ul *ngIf="request.files && request.files.length > 0">
+              <li *ngFor="let file of request.files">
+                <a href="javascript:void(0)" (click)="downloadFile(file.fileData, file.fileName)">
+                  {{ file.fileName }}
+                </a>
+              </li>
+            </ul>
+            <span *ngIf="!request.files || request.files.length === 0">No files uploaded</span>
+          </td>
+                  
+        </tr>
+      </tbody>
+    </table>
     
   </main>
 </body>

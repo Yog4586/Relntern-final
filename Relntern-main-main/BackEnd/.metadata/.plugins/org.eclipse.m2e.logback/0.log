@@ -845,3 +845,44 @@
 2024-09-27 06:03:46,609 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-09-27 06:03:46,627 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-09-27 06:03:46,650 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-09-27 06:25:29,474 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-09-27 06:25:29,537 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-09-27 06:25:29,547 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-09-27 10:08:42,100 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-09-27 10:08:42,202 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-09-27 10:08:42,213 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-09-27 10:50:38,928 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-09-27 10:50:39,267 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-09-27 10:50:39,308 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-09-27 11:02:21,173 [Worker-97: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-09-27 11:02:21,227 [Worker-97: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-09-27 11:02:21,236 [Worker-97: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-09-30 12:55:28,421 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-09-30 12:55:54,994 [Worker-7: Launching relntern-backend - ReInternBackendApplication] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-core:jar:6.0.0.Final has been relocated to org.hibernate.orm:hibernate-core:jar:6.0.0.Final
+2024-10-01 10:54:17,357 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 10:54:17,558 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 10:54:17,596 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-01 10:57:08,801 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 10:57:08,835 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 10:57:08,844 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-01 11:57:27,334 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 11:57:27,361 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 11:57:27,372 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-01 12:22:59,923 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 12:22:59,976 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 12:22:59,990 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-01 14:34:28,524 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 14:34:28,541 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 14:34:28,549 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-01 14:35:38,956 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 14:35:38,969 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 14:35:38,977 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-01 14:40:02,781 [Worker-76: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 14:40:02,803 [Worker-76: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 14:40:02,809 [Worker-76: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-01 14:40:52,989 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 14:40:53,018 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 14:40:53,024 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-01 15:42:04,865 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 15:42:05,154 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-01 15:42:05,178 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources

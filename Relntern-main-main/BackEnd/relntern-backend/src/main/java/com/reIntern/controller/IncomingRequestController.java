@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -46,11 +47,8 @@ public class IncomingRequestController {
             incomingRequest.setFullname(fullname);
             incomingRequest.setAssociation(association);
             incomingRequest.setEndDate(endDate);
-
-            // Save IncomingRequest
-            IncomingRequest savedRequest = incomingRequestService.saveIncomingRequest(incomingRequest);
-
-            // Loop through each file and store them
+            
+            List<FileUpload> fileUploadlist = new ArrayList<FileUpload>();
             for (MultipartFile file : uploads) {
                 if (file.isEmpty()) {
                     continue; // Skip empty files
@@ -58,11 +56,19 @@ public class IncomingRequestController {
                 FileUpload fileUpload = new FileUpload();
                 fileUpload.setFileName(file.getOriginalFilename());
                 fileUpload.setFileData(file.getBytes());
-                fileUpload.setIncomingRequest(savedRequest); // Link file to IncomingRequest
+                fileUploadlist.add(fileUpload);
+//                fileUpload.setIncomingRequest(savedRequest); // Link file to IncomingRequest
 
                 // Save the file to the database
-                fileUploadService.saveFileUpload(fileUpload);
+//                fileUploadService.saveFileUpload(fileUpload);
             }
+            incomingRequest.setFiles(fileUploadlist);
+
+            // Save IncomingRequest
+            incomingRequestService.saveIncomingRequest(incomingRequest);
+
+            // Loop through each file and store them
+           
 
             return new ResponseEntity<>("Incoming Request and files saved successfully.", HttpStatus.OK);
         } catch (Exception e) {
@@ -76,6 +82,7 @@ public class IncomingRequestController {
     public List<IncomingRequest> getAllIncomingRequests() {
         return incomingRequestService.getAllIncomingRequests(); 
     }
+    
 }
 
 //package com.reIntern.controller;

@@ -187,4 +187,10 @@ export class InternService {
     return `${this.API}/incoming-request/files/${fileName}`;
   }
 
+  public downloadFile(fileName: string): Observable<Blob> {
+    return this.http.get(`${this.API}/incoming-request/files/${fileName}`, {
+        responseType: 'blob'
+    });
+}
+
 }

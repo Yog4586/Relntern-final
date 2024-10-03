@@ -19,8 +19,8 @@ public class FileUpload {
     @Lob
     private byte[] fileData;
 
-    @ManyToOne
-    private IncomingRequest incomingRequest; // Foreign key to the parent IncomingRequest
+//    @ManyToOne
+//    private IncomingRequest incomingRequest; // Foreign key to the parent IncomingRequest
 
     // Getters and setters...
 
@@ -48,11 +48,11 @@ public class FileUpload {
         this.fileData = fileData;
     }
 
-    public IncomingRequest getIncomingRequest() {
-        return incomingRequest;
-    }
-
-    public void setIncomingRequest(IncomingRequest incomingRequest) {
-        this.incomingRequest = incomingRequest;
-    }
+//    public IncomingRequest getIncomingRequest() {
+//        return incomingRequest;
+//    }
+//
+//    public void setIncomingRequest(IncomingRequest incomingRequest) {
+//        this.incomingRequest = incomingRequest;
+//    }
 }

@@ -68,6 +68,7 @@ export class MentordashboardComponent implements OnInit {
     this.internService.getIncomingRequests().subscribe(
       (resp) => {
         this.incomingRequests = resp;
+        // debugger;
         console.log('Incoming requests:', this.incomingRequests);  // Debugging purpose
       },
       (err) => {
@@ -78,8 +79,46 @@ export class MentordashboardComponent implements OnInit {
 
   // Generate URL to download the file
   getFileUrl(fileName: string): string {
+    //debugger;
     return `http://localhost:8081/incoming-request/files/${fileName}`;
   }
+
+downloadFile(fileData: any, fileName: string) {
+  if (!fileName) {
+    console.error('File name is undefined or empty');
+    return; // You can also handle this case as needed
+  }
+
+  // Determine the file type based on the file extension
+  const fileType = this.getFileType(fileName);
+  const blob = new Blob([fileData], { type: fileType });
+
+  const link = document.createElement('a');
+  link.href = window.URL.createObjectURL(blob);
+  link.download = fileName;
+  link.click();
+}
+
+// Helper method to determine file MIME type based on file extension
+private getFileType(fileName: string): string {
+  const extension = fileName.split('.').pop()?.toLowerCase(); // Optional chaining
+  switch (extension) {
+    case 'pdf':
+      return 'application/pdf';
+    case 'ppt':
+    case 'pptx':
+      return 'application/vnd.ms-powerpoint';
+    case 'zip':
+      return 'application/zip';
+    case 'txt':
+      return 'text/plain';
+    default:
+      return 'application/octet-stream'; // Fallback for unknown types
+  }
+}
+
+  
+  
 
   openProfile(intern: any): void {
     this.matDialog.open(InternprofileComponent, {

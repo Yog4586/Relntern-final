@@ -1,7 +1,11 @@
 package com.reIntern.model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -22,8 +26,9 @@ public class IncomingRequest {
     private String fullname;
     private String association;
     private String endDate;
+    
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<FileUpload> files = new HashSet<>();
+    private List<FileUpload> files = new ArrayList<>();
 
 
 
@@ -31,19 +36,21 @@ public class IncomingRequest {
 
     // Getters and setters...
 
-    public Set<FileUpload> getFiless() {
-		return files;
-	}
 
-	public void setFiless(Set<FileUpload> files) {
-		this.files = files;
-	}
 
 	public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public List<FileUpload> getFiles() {
+		return files;
+	}
+
+	public void setFiles(List<FileUpload> files) {
+		this.files = files;
+	}
+
+	public void setId(int id) {
         this.id = id;
     }
 
