@@ -64,18 +64,18 @@ export class MentordashboardComponent implements OnInit {
   }
 
   // Fetch incoming requests and associated files
-  getIncomingRequests(): void {
-    this.internService.getIncomingRequests().subscribe(
-      (resp) => {
-        this.incomingRequests = resp;
-        // debugger;
-        console.log('Incoming requests:', this.incomingRequests);  // Debugging purpose
-      },
-      (err) => {
-        console.error(err);
-      }
-    );
-  }
+  // getIncomingRequests(): void {
+  //   this.internService.getIncomingRequests().subscribe(
+  //     (resp) => {
+  //       this.incomingRequests = resp;
+  //       // debugger;
+  //       console.log('Incoming requests:', this.incomingRequests);  // Debugging purpose
+  //     },
+  //     (err) => {
+  //       console.error(err);
+  //     }
+  //   );
+  // }
 
   // Generate URL to download the file
   getFileUrl(fileName: string): string {
@@ -83,40 +83,34 @@ export class MentordashboardComponent implements OnInit {
     return `http://localhost:8081/incoming-request/files/${fileName}`;
   }
 
-downloadFile(fileData: any, fileName: string) {
-  if (!fileName) {
-    console.error('File name is undefined or empty');
-    return; // You can also handle this case as needed
+  // Method to download file from backend
+  downloadFile(fileName: string) {
+    if (!fileName) {
+      console.error('File name is undefined or empty');
+      return;
+    }
+
+    // Call the download API from the internService
+    this.internService.downloadFile(fileName).subscribe(
+      (blob: Blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = fileName;
+        link.click();
+        window.URL.revokeObjectURL(url); // Clean up URL object
+      },
+      (error) => {
+        console.error('File download failed:', error);
+      }
+    );
   }
 
-  // Determine the file type based on the file extension
-  const fileType = this.getFileType(fileName);
-  const blob = new Blob([fileData], { type: fileType });
-
-  const link = document.createElement('a');
-  link.href = window.URL.createObjectURL(blob);
-  link.download = fileName;
-  link.click();
-}
-
-// Helper method to determine file MIME type based on file extension
-private getFileType(fileName: string): string {
-  const extension = fileName.split('.').pop()?.toLowerCase(); // Optional chaining
-  switch (extension) {
-    case 'pdf':
-      return 'application/pdf';
-    case 'ppt':
-    case 'pptx':
-      return 'application/vnd.ms-powerpoint';
-    case 'zip':
-      return 'application/zip';
-    case 'txt':
-      return 'text/plain';
-    default:
-      return 'application/octet-stream'; // Fallback for unknown types
+  getIncomingRequests(): void {
+    this.internService.getIncomingRequests().subscribe(requests => {
+      this.incomingRequests = requests;
+    });
   }
-}
-
   
   
 

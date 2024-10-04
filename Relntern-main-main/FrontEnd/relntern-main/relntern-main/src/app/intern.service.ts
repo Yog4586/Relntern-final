@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { catchError, Observable, Subject, throwError } from 'rxjs';
 import { Intern } from 'src/models/intern.mode';
 import { Task } from 'src/models/task.mode';
 
@@ -191,6 +191,18 @@ export class InternService {
     return this.http.get(`${this.API}/incoming-request/files/${fileName}`, {
         responseType: 'blob'
     });
-}
+  }
+
+// public downloadFile(fileName: string): Observable<Blob> {
+//   return this.http.get(`${this.API}/incoming-request/files/${fileName}`, {
+//     responseType: 'blob',  // Ensure that we receive the file as a Blob
+//   }).pipe(
+//     catchError((error) => {
+//       console.error('Error occurred while downloading file', error);
+//       return throwError(error);
+//     })
+//   );
+// }
+
 
 }

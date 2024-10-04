@@ -60,6 +60,7 @@
           (click)="goToPage('schedule')">Schedule</button>
       </div>
     </div>
+
     <h2 class="text-2xl font-bold mb-4 mt-4">Incoming Request</h2>
 
     <table class="min-w-full text-center">
@@ -81,17 +82,18 @@
           <td class="py-4 px-4">
             <ul *ngIf="request.files && request.files.length > 0">
               <li *ngFor="let file of request.files">
-                <a href="javascript:void(0)" (click)="downloadFile(file.fileData, file.fileName)">
+                <a href="javascript:void(0)" (click)="downloadFile(file.fileName)">
                   {{ file.fileName }}
                 </a>
               </li>
             </ul>
             <span *ngIf="!request.files || request.files.length === 0">No files uploaded</span>
           </td>
-                  
         </tr>
       </tbody>
     </table>
+    
+    
     
   </main>
 </body>
