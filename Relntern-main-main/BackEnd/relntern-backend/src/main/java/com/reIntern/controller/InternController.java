@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.reIntern.model.Intern;
 import com.reIntern.service.InternService;
 
+import jakarta.mail.MessagingException;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class InternController {
@@ -67,7 +69,7 @@ public class InternController {
     }
     
     @PostMapping("/{id}/closeInternship")
-    public ResponseEntity<String> closeInternship(@PathVariable int id) {
+    public ResponseEntity<String> closeInternship(@PathVariable int id) throws MessagingException {
 //        try {
             internService.closeInternship(id);
             return ResponseEntity.ok("Intern moved to inactive, mails triggerd.");

@@ -11,8 +11,9 @@ public class MailStructure {
     private Date startDate;
     private Date endDate;
     private String domainId;
+    private String location;
 
-    // Getters and Setters
+	// Getters and Setters
     public String getEmail() {
         return email;
     }
@@ -76,4 +77,12 @@ public class MailStructure {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
+    
+    public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
 }

@@ -34,7 +34,7 @@ export class AddComponent implements OnInit {
   ) { }
 
   registerForm = this.formBuilder.group({
-    fullname: new FormControl("", [Validators.required, Validators.minLength(2), Validators.pattern("[a-zA-Z].*")]),
+    fullname: new FormControl("", [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
     email: new FormControl("", [Validators.required, Validators.email]),
     role: new FormControl('', [Validators.required]),
     association: new FormControl('', Validators.required),
@@ -44,8 +44,8 @@ export class AddComponent implements OnInit {
     reference: new FormControl('', Validators.required),
     gradyear: new FormControl('', Validators.required),
     uniname: new FormControl('', Validators.required),
-    coursename: new FormControl('', Validators.required),
-    semester: new FormControl('', Validators.required),
+    coursename: new FormControl('', [Validators.required, Validators.min(1), Validators.max(8)]),
+    semester: new FormControl('', [Validators.required, Validators.min(1), Validators.max(8)]),
     specialization: new FormControl('', Validators.required),
     quarter: new FormControl('', [Validators.required]),
     quarterArray: new FormControl('', [Validators.required]),
@@ -181,7 +181,8 @@ export class AddComponent implements OnInit {
       projectname: this.registerForm.get('projectname')?.value,
       startDate: this.registerForm.get('startDate')?.value,
       endDate: this.registerForm.get('endDate')?.value,
-      mentor: this.selectedMentor
+      mentor: this.selectedMentor,
+      location: this.registerForm.get('location')?.value
     };
   
     this.internService.sendEmail(mailStructure).subscribe(

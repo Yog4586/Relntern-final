@@ -107,7 +107,7 @@
               </div>
               <div class="text-danger mr-1 italic md:mb-0 mb-2"
                 *ngIf="fullname.errors?.['pattern'] && (fullname.touched || fullname.dirty)">
-                Name should start with an alphabet.
+                Name should contain only alphabet.
               </div>
             </div>
             <input type="text" id="fullname" name="fullname"
@@ -292,14 +292,17 @@
           <div>
             <div class="md:flex">
               <label class="text-gray-700 md:mb-2 md:mr-2" for="semester">Semester</label>
-              <div class="form-text text-danger font flex items-start" *ngIf="semester.errors?.['required']">
-                *
+              <div *ngIf="semester.invalid && (semester.dirty || semester.touched)" class="text-red-600">
+                <span *ngIf="semester.errors?.['required']">Semester is required.</span>
+                <span *ngIf="semester.errors?.['min']">Semester must be at least 1.</span>
+                <span *ngIf="semester.errors?.['max']">Semester cannot be more than 8.</span>
               </div>
             </div>
             <input type="number" id="semester" name="semester"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter joining semester" formControlName="semester">
           </div>
+          
 
           <h2 class="text-3xl mt-2 font-bold col-span-2">Internship Details</h2>
 

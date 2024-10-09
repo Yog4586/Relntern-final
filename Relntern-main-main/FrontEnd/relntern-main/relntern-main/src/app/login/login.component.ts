@@ -24,9 +24,13 @@ export class LoginComponent implements OnInit {
   toastr: any;
   captchaResolved = false;
   captchaToken: string | null = null;
+  
 
   otpCode: string = '';
   otpModalVisible: boolean = false;
+
+  errorMessage: string | null = null;  // New property for storing error message
+  loading: boolean = false;
 
   constructor(private authservice: AuthService, private router: Router) {}
 
@@ -86,88 +90,81 @@ export class LoginComponent implements OnInit {
   // }
   // Function to open the OTP modal
   loginUser() {
+    this.errorMessage = null; // Clear the error message when user tries again
+    this.loading = true;
     console.log(this.username, this.password);
+  
     if (!this.captchaResolved) {
       console.log('Please complete the CAPTCHA');
+      this.loading = false;
       return;
     }
-
+  
     let userJson: any = {
       username: this.username,
       password: this.password,
       captchaToken: this.captchaToken,
     };
 
-    this.authservice.postUserData(userJson).subscribe((data) => {
-      let userId = data.id;
-
-      if (
-        data.role === 'admin' ||
-        data.role === 'mentor' ||
-        data.role === 'intern'
-      ) {
-        localStorage.setItem('role', data.role);
-        localStorage.setItem('userId', userId.toString());
-        localStorage.setItem('username', data.username);
-
-        // Set the appropriate role flag
-        this.isAdmin = data.role === 'admin';
-        this.isMentor = data.role === 'mentor';
-        this.isIntern = data.role === 'intern';
-
-        // Request OTP after successful login
-        this.authservice.requestOtp({ username: data.username }).subscribe(
-          () => {
-            this.openOtpModal(); // Open OTP modal after OTP is sent
-          },
-          (error) => {
-            console.log('Error sending OTP:', error);
+    this.authservice.postUserData(userJson).subscribe(
+      (data) => {
+        // Check if the user object is valid
+        if (data && data.role) {
+          let userId = data.id;
+  
+          if (
+            data.role === 'admin' ||
+            data.role === 'mentor' ||
+            data.role === 'intern'
+          ) {
+            localStorage.setItem('role', data.role);
+            localStorage.setItem('userId', userId.toString());
+            localStorage.setItem('username', data.username);
+  
+            // Set the appropriate role flag
+            this.isAdmin = data.role === 'admin';
+            this.isMentor = data.role === 'mentor';
+            this.isIntern = data.role === 'intern';
+  
+            // Request OTP after successful login
+            this.authservice.requestOtp({ username: data.username }).subscribe(
+              () => {
+                this.loading = false;
+                this.openOtpModal(); // Open OTP modal after OTP is sent
+              },
+              (error) => {
+                this.loading = false;
+                console.log('Error sending OTP:', error);
+              }
+            );
+          } else {
+            this.loading = false;
+            this.errorMessage = 'Invalid email or password, please enter again'; // Set error message
+            console.log('Incorrect password');
           }
-        );
-      } else {
-        this.toastr.error('Incorrect password');
-        console.log('Incorrect password');
+        } else {
+          this.loading = false;
+          this.errorMessage = 'Invalid email or password, please enter again'; // Set error message if user is not found
+        }
+      },
+      (error) => {
+        this.loading = false;
+        this.errorMessage = 'Invalid email or password, please enter again'; // Set error message on API failure
+        console.log('Login failed:', error);
       }
-    });
+    );
   }
+  
+
 
   openOtpModal() {
     this.otpModalVisible = true;
   }
 
-  // Function to close the OTP modal
   closeOtpModal() {
     this.otpModalVisible = false;
   }
-  // verifyOtp() {
-  //   if (this.otpCode.length !== 5) {
-  //     console.log('Please enter a valid 5-digit OTP');
-  //     return;
-  //   }
-  //   let otpJson: any = {
-  //     username: this.username,
-  //     otp: this.otpCode,
-  //   };
-  //   this.authservice.verifyOtp(otpJson).subscribe((response) => {
-  //     console.log(response);
 
-  //     if (response.role != null) {
-  //       console.log(response);
-  //       switch(response.role)
-  //       {
-  //         case "intern" :
-  //           this.goToPage('interndashboard');
-  //         break;
-  //       }
-  //      //this.redirectUser(); // Redirect to appropriate dashboard
-  //       this.closeOtpModal(); // Close OTP modal after successful verification
-
-  //     } else {
-  //       this.toastr.error('Invalid OTP');
-  //     }
-  //   });
-  // }
-  // Function to verify OTP
   verifyOtp() {
     if (this.otpCode.length !== 5) {
       console.log('Please enter a valid 5-digit OTP');
@@ -190,7 +187,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  // Function to redirect user based on their role
   redirectUser() {
     if (this.isAdmin) {
       this.goToPage('dashboard');

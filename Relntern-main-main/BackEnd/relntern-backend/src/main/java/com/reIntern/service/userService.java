@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-//logic implementation in service (OTP generation and verification logic is implemented.)
+// Logic implementation in service (OTP generation and verification logic is implemented.)
 @Service
 public class userService {
 
@@ -21,10 +21,19 @@ public class userService {
     @Autowired
     private JavaMailSender mailSender;
 
+    // Method to verify user credentials
+    public user verifyUser(String username, String password) {
+        user foundUser = userRepositry.findByUsername(username); // Find user by username
+        if (foundUser != null && foundUser.getPassword().equals(password)) { // Check if password matches
+            return foundUser; // Return the found user if credentials are valid
+        }
+        return null; // Return null if user not found or password doesn't match
+    }
+
     // Method to generate and send OTP
     public void generateAndSendOtp(String username) {
         String otp = generateOtp();
-        
+
         // Fetch the user by username (which is an email)
         user user = userRepositry.findByUsername(username);
         if (user != null) {
@@ -47,9 +56,9 @@ public class userService {
         if (user != null && user.getOtp().equals(otp)) {
             user.setOtp(null);  // Clear OTP after successful verification
             userRepositry.save(user);
-            Map<String, String> obj=new HashMap<>();//Use void if you don't need to return any information and the method's only purpose is to perform actions like verifying the OTP and updating the database.
-            obj.put("role", user.getRole()); //  Use boolean if you want to indicate success or failure without returning specific data.
-            return obj; //Keep the Map if you need to return data, such as the user's role, to the caller.
+            Map<String, String> obj = new HashMap<>(); // Use void if you don't need to return any information and the method's only purpose is to perform actions like verifying the OTP and updating the database.
+            obj.put("role", user.getRole()); // Use boolean if you want to indicate success or failure without returning specific data.
+            return obj; // Keep the Map if you need to return data, such as the user's role, to the caller.
         }
         return null;
     }

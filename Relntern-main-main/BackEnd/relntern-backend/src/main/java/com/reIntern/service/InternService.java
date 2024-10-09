@@ -12,6 +12,8 @@ import com.reIntern.model.Intern;
 import com.reIntern.repository.InactiveInternRepository;
 import com.reIntern.repository.InternRepository;
 
+import jakarta.mail.MessagingException;
+
 @Service
 public class InternService {
 
@@ -104,7 +106,7 @@ public class InternService {
 		}
 	}
 
-	public void closeInternship(int internId) {
+	public void closeInternship(int internId) throws MessagingException {
 		java.util.Optional<Intern> optionalActiveIntern = internRepository.findById(internId);
 		if (optionalActiveIntern.isPresent()) {
 			Intern intern = optionalActiveIntern.get();

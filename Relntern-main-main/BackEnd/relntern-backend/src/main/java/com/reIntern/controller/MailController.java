@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.reIntern.model.MailStructure;
 import com.reIntern.service.EmailService;
 
+import jakarta.mail.MessagingException;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/mail")
@@ -19,7 +21,7 @@ public class MailController {
     private EmailService emailService;
 
     @PostMapping("/sendToIntern")
-    public void sendEmail(@RequestBody MailStructure mailStructure) {
+    public void sendEmail(@RequestBody MailStructure mailStructure) throws MessagingException {
         // Extract details from mailStructure and send email
         emailService.sendEmail(
             mailStructure.getEmail(), 
@@ -28,12 +30,13 @@ public class MailController {
             mailStructure.getProjectname(), 
             mailStructure.getMentor(),
             mailStructure.getStartDate(), 
-            mailStructure.getEndDate()
+            mailStructure.getEndDate(),
+            mailStructure.getLocation()
         );
     }
 
     @PostMapping("/sendToHR")
-    public void sendEmailToHR(@RequestBody MailStructure mailStructure) {
+    public void sendEmailToHR(@RequestBody MailStructure mailStructure) throws MessagingException {
         // Extract details from mailStructure and send email to HR
         emailService.sendEmailtoHR(
             mailStructure.getFullname(), 
@@ -47,7 +50,7 @@ public class MailController {
     }
     
     @PostMapping("/sendToMentor")
-    public void sendEmailToMentor(@RequestBody MailStructure mailStructure) {
+    public void sendEmailToMentor(@RequestBody MailStructure mailStructure) throws MessagingException {
         // Extract details from mailStructure and send email to mentor
         emailService.sendEmailtoMentor(
             mailStructure.getFullname(), 
@@ -61,7 +64,7 @@ public class MailController {
     }
 
     @PostMapping("/sendDeactivate")
-    public void sendEmailToDeactivate(@RequestBody MailStructure mailStructure) {
+    public void sendEmailToDeactivate(@RequestBody MailStructure mailStructure) throws MessagingException {
         // Extract details from mailStructure and send email to deactivate account
         emailService.sendEmailtoDeactivate(
             mailStructure.getFullname(), 

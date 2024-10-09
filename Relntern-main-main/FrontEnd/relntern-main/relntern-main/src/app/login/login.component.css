@@ -153,4 +153,32 @@ input[type="color"]:focus,
     background-color: #f44336;
     color: #fff;
   }
+  .loading-backdrop {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(255, 255, 255, 0.7); /* Light semi-transparent background */
+    display: flex; /* Use flexbox to center the spinner */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure it's on top of other content */
+  }
+  
+  .loading-spinner {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: 7px solid #3b82f6;
+    border-top: 7px solid white;
+    animation: spin 1s linear infinite; /* Add spinning animation */
+  }
+  
+  /* Add a spinning animation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
   

@@ -931,3 +931,97 @@
 2024-10-04 09:49:54,808 [Worker-202: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-10-04 09:49:55,079 [Worker-202: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-10-04 09:49:55,094 [Worker-202: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-04 09:53:36,416 [Worker-219: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-04 09:53:36,429 [Worker-219: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-04 09:53:36,435 [Worker-219: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 11:45:36,484 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-10-07 11:45:52,480 [Worker-2: Launching relntern-backend - ReInternBackendApplication] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-core:jar:6.0.0.Final has been relocated to org.hibernate.orm:hibernate-core:jar:6.0.0.Final
+2024-10-07 12:20:47,406 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 12:20:47,448 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 12:20:47,462 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 15:16:19,734 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:16:19,839 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:16:19,845 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 15:16:41,661 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:16:41,703 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:16:41,715 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 15:18:53,942 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:18:53,955 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:18:53,967 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 15:40:17,382 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:40:17,469 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:40:17,479 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 15:42:08,428 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:42:08,442 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:42:08,481 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 15:42:47,841 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:42:47,855 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:42:47,867 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 15:44:15,614 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:44:15,630 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 15:44:15,643 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:28:56,846 [Worker-69: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-10-07 16:29:00,997 [Worker-69: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.reIntern:reIntern-backend:0.0.1-SNAPSHOT @ C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\pom.xml.
+2024-10-07 16:29:01,678 [Worker-69: Updating Maven Project] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-core:jar:6.0.0.Final has been relocated to org.hibernate.orm:hibernate-core:jar:6.0.0.Final
+2024-10-07 16:29:02,293 [Worker-69: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /relntern-backend/src/main/java
+2024-10-07 16:29:02,296 [Worker-69: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /relntern-backend/src/main/resources
+2024-10-07 16:29:02,298 [Worker-69: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /relntern-backend/src/main/resources
+2024-10-07 16:29:02,299 [Worker-69: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /relntern-backend/src/test/java
+2024-10-07 16:29:02,301 [Worker-69: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /relntern-backend/src/test/resources
+2024-10-07 16:29:02,969 [Worker-69: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 5.00 sec, update config takes 0.00 sec 
+2024-10-07 16:29:03,947 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:29:03,987 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:29:04,008 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:30:25,644 [Worker-67: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.reIntern:reIntern-backend:0.0.1-SNAPSHOT @ C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\pom.xml.
+2024-10-07 16:30:26,585 [Worker-67: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/jakarta/mail/jakarta.mail-api/2.1.2/jakarta.mail-api-2.1.2.pom
+2024-10-07 16:30:26,655 [Worker-67: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/jakarta/mail/jakarta.mail-api/2.1.2/jakarta.mail-api-2.1.2.pom
+2024-10-07 16:30:26,684 [Worker-67: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-core:jar:6.0.0.Final has been relocated to org.hibernate.orm:hibernate-core:jar:6.0.0.Final
+2024-10-07 16:30:27,181 [Worker-67: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/jakarta/mail/jakarta.mail-api/2.1.2/jakarta.mail-api-2.1.2.jar
+2024-10-07 16:30:27,265 [Worker-67: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/jakarta/mail/jakarta.mail-api/2.1.2/jakarta.mail-api-2.1.2.jar
+2024-10-07 16:30:28,306 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:30:28,335 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:30:28,348 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:30:29,046 [Worker-69: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/jakarta/mail/jakarta.mail-api/2.1.2/jakarta.mail-api-2.1.2-sources.jar
+2024-10-07 16:30:29,127 [Worker-69: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/jakarta/mail/jakarta.mail-api/2.1.2/jakarta.mail-api-2.1.2-sources.jar
+2024-10-07 16:30:29,140 [Worker-69: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for jakarta.mail:jakarta.mail-api:2.1.2
+2024-10-07 16:30:31,464 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:30:31,494 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:30:31,509 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:34:54,178 [Worker-75: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.reIntern:reIntern-backend:0.0.1-SNAPSHOT @ C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\pom.xml.
+2024-10-07 16:34:54,975 [Worker-75: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-core:jar:6.0.0.Final has been relocated to org.hibernate.orm:hibernate-core:jar:6.0.0.Final
+2024-10-07 16:34:55,777 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:34:55,802 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:34:55,813 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:34:59,003 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:34:59,027 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:34:59,041 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:35:13,225 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:35:13,234 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:35:13,239 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:44:41,663 [Worker-87: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-10-07 16:44:42,253 [Worker-87: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.reIntern:reIntern-backend:0.0.1-SNAPSHOT @ C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\pom.xml.
+2024-10-07 16:44:42,823 [Worker-87: Updating Maven Project] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-core:jar:6.0.0.Final has been relocated to org.hibernate.orm:hibernate-core:jar:6.0.0.Final
+2024-10-07 16:44:43,276 [Worker-87: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /relntern-backend/src/main/java
+2024-10-07 16:44:43,277 [Worker-87: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /relntern-backend/src/main/resources
+2024-10-07 16:44:43,278 [Worker-87: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /relntern-backend/src/main/resources
+2024-10-07 16:44:43,278 [Worker-87: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /relntern-backend/src/test/java
+2024-10-07 16:44:43,279 [Worker-87: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /relntern-backend/src/test/resources
+2024-10-07 16:44:43,827 [Worker-87: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 0.00 sec 
+2024-10-07 16:44:44,881 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:44:45,019 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:44:45,032 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:44:57,900 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:44:58,166 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:44:58,172 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:45:59,903 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:45:59,930 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:45:59,936 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:46:29,312 [Worker-91: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:46:29,330 [Worker-91: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:46:29,342 [Worker-91: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:46:48,071 [Worker-86: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:46:48,086 [Worker-86: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:46:48,095 [Worker-86: Launching relntern-backend - ReInternBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
+2024-10-07 16:52:44,204 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:52:44,214 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-10-07 16:52:44,219 [Worker-89: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ytiwa\OneDrive\Desktop\Relntern-final\Relntern-main-main\BackEnd\relntern-backend\src\test\resources
