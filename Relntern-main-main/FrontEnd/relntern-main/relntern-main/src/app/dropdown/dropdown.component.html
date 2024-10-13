@@ -1,0 +1,17 @@
+<div class="relative inline-block mt-5">
+  <i class="far fa-user-circle" style="font-size: 35px; cursor: pointer;" (click)="toggleDropdown()"></i>
+  <div *ngIf="isDropdownVisible" class="fixed right-0 mt-2 bg-white shadow-lg rounded z-10">
+    <ul class="list-none p-2">
+      <li class="dropdown-item cursor-pointer">
+        <h2 class="text-black font-bold italic cursor-pointer">{{ roledesc }}</h2>
+      </li>
+      <div class="dropdown-divider"></div>
+      <li class="dropdown-item logout-item cursor-pointer">
+        <div class="flex items-center cursor-pointer hover:bg-gray-100" (click)="logout()">
+          <i class="fas fa-sign-out-alt text-red-700 hover:text-red-800" style="font-size: 20px;"></i>
+          <span class="ml-2 text-black font-bold">Logout</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

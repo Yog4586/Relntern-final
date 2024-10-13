@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormControl, NgForm, Validators } from '@angular/forms';
 import { InternService } from '../intern.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../service/auth.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -23,7 +24,7 @@ throw new Error('Method not implemented.');
  
   constructor(private internService: InternService, private router: Router,
    
-    private formBuilder: FormBuilder,private routes : ActivatedRoute)
+    private formBuilder: FormBuilder,private routes : ActivatedRoute, private toastr: ToastrService)
     {
       this.registerForm = this.formBuilder.group({
         task: ['', Validators.required],
@@ -75,18 +76,17 @@ throw new Error('Method not implemented.');
       this.internService.registerTask(taskDetail,this.internId).subscribe(
         (resp: any) => {
           console.log(resp);
+          this.toastr.success('Task added successfully!', 'Success');
           this.registerForm.reset();
           this.router.navigate(['/list']);
         },
         (err: any) => {
+          this.toastr.error('Failed to add task. Please try again.'); // Show error message
           console.log(err);
         }
       );
-    }
-    else {
-      // Handle form validation errors
-      console.log('Form is invalid');
-      alert("Invalid Input");
+    } else {
+      this.toastr.warning('Please fill in all required fields.'); // Show warning message for form validation errors
     }
   }
 

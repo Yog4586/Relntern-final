@@ -1,0 +1,17 @@
+.dropdown-item {
+  padding: 8px 16px; /* Adjust padding as needed */
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #e0e0e0; /* Light gray for the divider */
+  margin: 4px 0; /* Space above and below the divider */
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+}
+
+.dropdown-item h2 {
+  margin: 0; /* Remove default margin */
+}

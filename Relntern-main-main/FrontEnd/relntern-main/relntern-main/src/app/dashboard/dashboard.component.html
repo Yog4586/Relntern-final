@@ -20,11 +20,15 @@
         <div>
           <div class="flex space-x-4 text-black">
             <div id="Logout"><button type="button"
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-              (click)="goToPage('admin-signup')">Register Admin</button></div>
-            <div id="Logout"><button type="button"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
+              (click)="goToPage('admin-signup')">Register Admin</button>
+            </div>
+            <!-- <div id="Logout"><button type="button"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-                (click)="logout()">Logout</button></div>
+                (click)="logout()">Logout</button>
+                class="text-white font-bold py-2 px-4 rounded mt-5 bg-blue-500 hover:bg-blue-700"
+            </div> -->
+            <app-dropdown [roledesc]="roledesc"></app-dropdown>
           </div>
         </div>
       </div>

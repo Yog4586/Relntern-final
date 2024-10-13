@@ -20,14 +20,9 @@
 
         <div class="flex items-center justify-center space-x-1 text-black">
           <div class="mr-3">
-            <div class="font-bold text-xl flex justify-center">{{mentorDetails?.mentorname}}</div>
-            <div class="flex justify-end text-xl font-semibold italic">Mentor</div>
+            <div class="font-bold text-xl flex justify-center mt-5">{{mentorDetails?.mentorname}}</div>
           </div>
-
-          <div id="Add_Mentor">
-            <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-              (click)="logout()">Logout</button>
-          </div>
+          <app-dropdown [roledesc]="roledesc"></app-dropdown>
         </div>
       </div>
     </header>

@@ -71,6 +71,12 @@
           siteKey="6LfV1CQqAAAAAIjQP-Gd_IgTmvvQmiCI1r-mt-2Q"
         ></re-captcha>
 
+        <!-- Add the captcha error message below your CAPTCHA -->
+<div *ngIf="captchaErrorMessage" style="color: red; font-size: 14px; text-align: center;">
+  {{ captchaErrorMessage }}
+</div>
+
+
         <div>
           <button
             type="submit"

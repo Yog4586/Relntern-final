@@ -52,6 +52,7 @@ import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { InternmentorlistComponent } from './internmentorlist/internmentorlist.component';
 import { AdminregisterComponent } from './adminregister/adminregister.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 
 
@@ -89,7 +90,8 @@ import { AdminregisterComponent } from './adminregister/adminregister.component'
     MentorsignupComponent,
     AdminsignupComponent,
     InternmentorlistComponent,
-    AdminregisterComponent
+    AdminregisterComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -103,7 +105,12 @@ import { AdminregisterComponent } from './adminregister/adminregister.component'
     MatIconModule,
     MatFormFieldModule,
     MaterialModule,
-    ToastrModule.forRoot({progressBar:true,progressAnimation:'increasing',preventDuplicates:true}),
+    //ToastrModule.forRoot({progressBar:true,progressAnimation:'increasing',preventDuplicates:true}),
+    ToastrModule.forRoot({
+      timeOut: 3000, // Duration for which the toast is shown
+      positionClass: 'toast-top-right', // Position of the toast
+      preventDuplicates: true, // Avoid duplicate toasts
+    }),
     GanttModule,
     NgChartsModule,
     MatMenuModule,

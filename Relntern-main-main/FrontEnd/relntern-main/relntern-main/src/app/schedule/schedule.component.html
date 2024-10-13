@@ -58,15 +58,16 @@
         </div>
         <div>
           <div class="flex space-x-4 text-black">
-            <a><div class="italic text-xl text-black font-bold py-1 px-4 rounded mt-4">
-              {{roledesc}}</div></a>
+            <!-- <a><div class="italic text-xl text-black font-bold py-1 px-4 rounded mt-4">
+              {{roledesc}}</div></a> -->
             <div id="Add_Mentor"><button type="button"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
                 (click)="goToPage('inactive')">Past Interns</button></div>
             <div id="Add_Mentor"><button type="button"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
                 (click)="goToPage('mentorlist')">Mentor List</button></div>
 
+            <app-dropdown [roledesc]="roledesc"></app-dropdown>
           </div>
         </div>
       </div>

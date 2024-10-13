@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { InternService } from '../intern.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -26,7 +26,6 @@ export class HeadersComponent implements OnInit {
   ) {}
 
   isCurrentRoute(route: string): boolean {
-    // console.log(this.router.url);
     return this.router.url == route;
   }
 
@@ -62,11 +61,51 @@ export class HeadersComponent implements OnInit {
     localStorage.removeItem('role');
     this.router.navigate([``]);
   }
+
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;
   }
 
-  goToPage(page: string): void {
-    this.router.navigate([page]);
+  // Close the dropdown when clicking outside
+  @HostListener('document:click', ['$event'])
+  closeDropdown(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    const dropdown = document.querySelector('.dropdown');
+    const userIcon = document.querySelector('.fa-user-circle');
+
+    // Close the dropdown if the click is outside of the dropdown and the icon
+    if (this.isDropdownVisible && !dropdown?.contains(target) && target !== userIcon) {
+      this.isDropdownVisible = false;
+    }
   }
+  goToPage(page: string): void {
+    // If admin, show the 'list' route (Active Interns), and for mentors, show 'internmentorlist'
+    if (this.isAdmin && page === 'list') {
+      this.router.navigate(['/list']); // Navigate to Active Interns for Admin
+    } else if (this.isMentor && page === 'list') {
+      this.router.navigate(['/internmentorlist']); // Navigate to Intern Mentor list for Mentor
+    } else {
+      this.router.navigate([page]); // Other routes remain the same
+    }
+  }
+  
+
+  navigateByRole(): void {
+    // Navigate to dashboard if the user is an admin, otherwise to mentordashboard if they are a mentor
+    if (this.isAdmin) {
+      this.goToPage('dashboard');
+    } else if (this.isMentor) {
+      this.goToPage('mentordashboard');
+    }
+  }
+
+  navigateBasedOnRole(): void {
+    if (this.isAdmin) {
+      this.router.navigate(['/list']); // Admin should see Active Interns list
+    } else if (this.isMentor) {
+      this.router.navigate(['/internmentorlist']); // Mentor should see their Interns list
+    }
+  }
+
+  
 }

@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   toastr: any;
   captchaResolved = false;
   captchaToken: string | null = null;
+  captchaErrorMessage: string | null = null;
   
 
   otpCode: string = '';
@@ -91,13 +92,27 @@ export class LoginComponent implements OnInit {
   // Function to open the OTP modal
   loginUser() {
     this.errorMessage = null; // Clear the error message when user tries again
+    this.captchaErrorMessage = null;
     this.loading = true;
     console.log(this.username, this.password);
   
-    if (!this.captchaResolved) {
-      console.log('Please complete the CAPTCHA');
+    // Check if username or password is empty
+    if (!this.username || !this.password) {
       this.loading = false;
+      this.errorMessage = 'Invalid email or password, please enter again';
+      console.log('Email or password is missing');
       return;
+    }
+  
+    // if (!this.captchaResolved) {
+    //   console.log('Please complete the CAPTCHA');
+    //   this.loading = false;
+    //   return;
+    // }
+    if (!this.captchaResolved) {
+      this.captchaErrorMessage = 'Checkbox verification required!'; // Display error message
+      this.loading = false;
+      return; // Prevent login if CAPTCHA not verified
     }
   
     let userJson: any = {
@@ -105,7 +120,7 @@ export class LoginComponent implements OnInit {
       password: this.password,
       captchaToken: this.captchaToken,
     };
-
+  
     this.authservice.postUserData(userJson).subscribe(
       (data) => {
         // Check if the user object is valid
@@ -154,6 +169,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+  
   
 
 
