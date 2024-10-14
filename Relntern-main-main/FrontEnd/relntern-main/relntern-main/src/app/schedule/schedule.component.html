@@ -118,6 +118,14 @@
       <!-- Loop through the list of mentors to populate the dropdown -->
       <option *ngFor="let mentor of mentors" [value]="mentor.mentorname">{{mentor.mentorname}}</option>
     </select>
+    <!-- Intern Filter Dropdown -->
+<label for="internFilter" class="text-lg font-bold" style="padding-left: 30px;">Filter by Intern:</label>
+<select id="internFilter" class="ml-2 px-4 py-2 border border-gray-300 rounded" [(ngModel)]="selectedIntern" (change)="onInternFilterChange()">
+  <option value="all">All Interns</option>
+  <option value="new">New Intern</option>
+  <option value="old">Old Intern</option>
+</select>
+
   </div>
 
   <!-- Interns Table -->
@@ -129,6 +137,7 @@
           <th scope="col" class="py-2 px-4">Intern ID</th>
           <th scope="col" class="py-2 px-4">Full Name</th>
           <th scope="col" class="py-2 px-4">Mentor</th>
+          <th scope="col" class="py-2 px-4">Start Date</th>
           <th scope="col" class="py-2 px-4">End Date</th>
           <th scope="col" class="py-2 px-4">Quarter</th>
         </tr>
@@ -139,6 +148,7 @@
           <td class="py-2 px-4" (click)="openProfile(intern)">{{ intern.id }}</td>
           <td class="py-2 px-4" ><button (click)="openProfile(intern)">{{ intern.fullname }}</button></td>
           <td class="py-2 px-4" (click)="openProfile(intern)">{{ intern.mentor }}</td>
+          <td class="py-2 px-4" (click)="openProfile(intern)">{{ intern.startDate }}</td>
           <td class="py-2 px-4" (click)="openProfile(intern)">{{ intern.endDate }}</td>
           <td class="py-2 px-4" (click)="openProfile(intern)">{{ intern.quarter }}</td>
         </tr>

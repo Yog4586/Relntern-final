@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
 
   errorMessage: string | null = null;  // New property for storing error message
   loading: boolean = false;
+email: any;
 
   constructor(private authservice: AuthService, private router: Router) {}
 

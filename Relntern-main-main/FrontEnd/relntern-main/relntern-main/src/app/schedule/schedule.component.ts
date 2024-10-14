@@ -16,6 +16,7 @@ export class ScheduleComponent implements OnInit {
   selectedQuarter: string = 'all';
   selectedYear: string = 'all';
   selectedMentor: string = 'all';
+  selectedIntern: string = 'all';
   mentors: any; // Assuming you have a list of mentors to populate the dropdown
   public data: Object[] = [];
 
@@ -44,12 +45,22 @@ export class ScheduleComponent implements OnInit {
 
   // Filter interns based on selected quarter, year, and mentor name
   filterInterns(): void {
-    this.filteredInterns = this.internDetails.filter((intern: any) => {
-      const quarterMatch = this.selectedQuarter === 'all' || intern.quarter === this.selectedQuarter;
-      const yearMatch = this.selectedYear === 'all' || intern.endDate.startsWith(this.selectedYear);
-      const mentorMatch = this.selectedMentor === 'all' || intern.mentor === this.selectedMentor;
-      return quarterMatch && yearMatch && mentorMatch;
-    });
+    this.filteredInterns = this.internDetails
+      .filter((intern: any) => {
+        const quarterMatch = this.selectedQuarter === 'all' || intern.quarter === this.selectedQuarter;
+        const yearMatch = this.selectedYear === 'all' || intern.endDate.startsWith(this.selectedYear);
+        const mentorMatch = this.selectedMentor === 'all' || intern.mentor === this.selectedMentor;
+        return quarterMatch && yearMatch && mentorMatch;
+      })
+      .sort((a: any, b: any) => {
+        if (this.selectedIntern === 'new') {
+          return new Date(b.startDate).getTime() - new Date(a.startDate).getTime(); // Newest first
+        } else if (this.selectedIntern === 'old') {
+          return new Date(a.startDate).getTime() - new Date(b.startDate).getTime(); // Oldest first
+        } else {
+          return 0; // No sorting for 'all' option
+        }
+      });
   }
 
   private loadGanttData(): void {
@@ -102,6 +113,11 @@ export class ScheduleComponent implements OnInit {
   onMentorFilterChange(): void {
     this.filterInterns();
   }
+
+    // New method to handle the intern filter change event
+    onInternFilterChange(): void {
+      this.filterInterns();
+    }
 
   // Fetch the list of mentors
   getMentors(): void {

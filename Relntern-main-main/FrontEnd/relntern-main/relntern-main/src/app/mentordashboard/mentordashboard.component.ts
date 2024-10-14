@@ -12,6 +12,9 @@ import { UpdateDialogBodyComponent } from '../update-dialog-body/update-dialog-b
   styleUrls: ['./mentordashboard.component.css']
 })
 export class MentordashboardComponent implements OnInit {
+onRowClick(_t47: any) {
+throw new Error('Method not implemented.');
+}
   userid: any;
   mentorDetails: any;
   mentoruserid: any;
