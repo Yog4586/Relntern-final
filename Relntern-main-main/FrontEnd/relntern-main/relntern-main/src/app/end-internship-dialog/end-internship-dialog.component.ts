@@ -99,7 +99,7 @@ export class EndInternshipDialogComponent {
   onSubmit(): void { 
     this.isLoading = true; // Set loading state to true
     console.log(this.data);
-  
+  debugger
     // Create an object with the intern details
     const emailDetails = {
         id: this.data.id,

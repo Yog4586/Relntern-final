@@ -16,6 +16,8 @@ export class UpdateDialogBodyComponent {
   mentors: any;
   // matDialog: any;
   internDetails: any;
+  startDateError: boolean = false;
+  endDateError: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<UpdateDialogBodyComponent>,
@@ -25,6 +27,21 @@ export class UpdateDialogBodyComponent {
 
   ngOnInit(): void {
     // this.updateIntern();
+  }
+
+
+  validateStartDate(): void {
+    const today = new Date().setHours(0, 0, 0, 0); // Current date with time set to midnight
+    const selectedStartDate = new Date(this.data.intern.startDate).setHours(0, 0, 0, 0);
+
+    this.startDateError = selectedStartDate < today;
+  }
+
+  validateEndDate(): void {
+    const startDate = new Date(this.data.intern.startDate).setHours(0, 0, 0, 0);
+    const endDate = new Date(this.data.intern.endDate).setHours(0, 0, 0, 0);
+
+    this.endDateError = endDate <= startDate;
   }
 
   updateIntern(): void {

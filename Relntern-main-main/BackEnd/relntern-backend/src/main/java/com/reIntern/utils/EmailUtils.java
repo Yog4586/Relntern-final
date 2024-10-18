@@ -2,6 +2,8 @@ package com.reIntern.utils;
 
 import java.sql.Date;
 
+import com.reIntern.model.Mentor;
+
 public class EmailUtils {
 	
 //    public static String getOtpEmailMessage(String username, String otpCode) {
@@ -13,7 +15,7 @@ public class EmailUtils {
 //                + "Reliance Industries Ltd";
 //    }
 
-	public static String getEmailMessage(String fullname, String association, String projectname, String mentor,
+	public static String getEmailMessage(String fullname, String association, String projectname, String mentor, Mentor mentorDetails,
 			Date startdate, Date enddate, String location) {
 		return "<html>" +
 

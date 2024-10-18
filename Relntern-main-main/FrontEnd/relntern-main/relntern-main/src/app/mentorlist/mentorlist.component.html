@@ -16,6 +16,8 @@
                         <!-- <th scope="col" class="py-2 px-4">Role</th> -->
                         <th scope="col" class="py-2 px-4">Association</th>
                         <th scope="col" class="py-2 px-4">Mentor Email</th>
+                        <th scope="col" class="py-2 px-4">L1 Name</th>
+                        <th scope="col" class="py-2 px-4">L1 email</th>
                         <th scrope="col" class="py-2 px-2" *ngIf="isAdmin">Delete</th>
                     </tr>
                 </thead>
@@ -26,6 +28,8 @@
                         <!-- <td class="py-2 px-4">{{mentor.projectstatus}}</td> -->
                         <td class="py-2 px-4">{{mentor.association}}</td>
                         <td class="py-2 px-4">{{mentor.mentoremail}}</td>
+                        <td class="py-2 px-4">{{mentor.l1name}}</td>
+                        <td class="py-2 px-4">{{mentor.l1email}}</td>
                         <td class="py-2 px-2" *ngIf="isAdmin"><button class="btn btn-primary" (click)="openMentorDetete(mentor.mentorid)" >Delete Mentor</button></td>
                     </tr>
                 </tbody>

@@ -2,6 +2,8 @@ package com.reIntern.model;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class MailStructure {
     private String email;
     private String fullname;
@@ -12,6 +14,7 @@ public class MailStructure {
     private Date endDate;
     private String domainId;
     private String location;
+    private Mentor mentorDetails;
 
 	// Getters and Setters
     public String getEmail() {
@@ -54,6 +57,14 @@ public class MailStructure {
         this.mentor = mentor;
     }
 
+    public Mentor getMentorDetails() { // Getter for mentorDetails
+        return mentorDetails;
+    }
+
+    public void setMentorDetails(Mentor mentorDetails) { // Setter for mentorDetails
+        this.mentorDetails = mentorDetails;
+    }
+    
     public Date getStartDate() {
         return startDate;
     }

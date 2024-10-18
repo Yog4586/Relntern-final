@@ -29,6 +29,7 @@ public class MailController {
             mailStructure.getAssociation(), 
             mailStructure.getProjectname(), 
             mailStructure.getMentor(),
+            mailStructure.getMentorDetails(),
             mailStructure.getStartDate(), 
             mailStructure.getEndDate(),
             mailStructure.getLocation()
@@ -59,7 +60,8 @@ public class MailController {
             mailStructure.getEndDate(), 
             mailStructure.getDomainId(), 
             mailStructure.getProjectname(), 
-            mailStructure.getMentor()
+            mailStructure.getMentor(),
+            mailStructure.getMentorDetails()
         );
     }
 

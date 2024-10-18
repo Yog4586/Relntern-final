@@ -1,18 +1,16 @@
 package com.reIntern.model;
 
 import java.sql.Date;
-
 import java.util.List;
 import java.util.Set;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;  // Added for mapping
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -39,17 +37,27 @@ public class Intern {
     private String coursename;
     private String specialization;
     private String reference;
-    
     private String phone;
     private String location;
     private Date dob;
     private String semester;
     private int userId;
-    
     private String remarks;
     private String domainid;
-    
     private boolean isActive;
+
+    // Mapping with Mentor entity
+    @ManyToOne
+    @JoinColumn(name = "mentor_id", referencedColumnName = "mentorid") // Maps to Mentor's ID
+    private Mentor mentorDetails;
+
+    public Mentor getMentorDetails() {
+        return mentorDetails;
+    }
+
+    public void setMentorDetails(Mentor mentorDetails) {
+        this.mentorDetails = mentorDetails;
+    }
     
     public boolean getIsActive() {
 		return isActive;

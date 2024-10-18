@@ -50,7 +50,7 @@ export class InternService {
     console.log(userId);
     let url = "http://localhost:8081/viewByUserId/" + userId;
     return this.http.get<Intern>(url);
-  }
+  } 
 
   public getByMentor(mentoremail: any) {
     console.log(mentoremail);

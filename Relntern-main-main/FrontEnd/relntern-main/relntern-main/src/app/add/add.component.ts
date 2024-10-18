@@ -54,8 +54,9 @@ export class AddComponent implements OnInit {
     projectname: new FormControl('', Validators.required),
     startDate: new FormControl('', [Validators.required, this.startDateValidator]),
     endDate: new FormControl('', [Validators.required, this.endDateValidator]),
+    mentorDetails: new FormControl(''),
   }, { validators: this.dateRangeValidator });
-
+    // mentorDetails: new FormControl('')
   ngOnInit(): void {
     this.getInterns();
     this.getMentors();
@@ -66,12 +67,22 @@ export class AddComponent implements OnInit {
     });
   }
 
+  // selectmentor(mentor: any) {
+  //   const selectedMentorName = this.registerForm.get('mentor')?.value;
+  //   const selectedMentor = this.mentors.find((mentors: any) => { return mentors.mentorname === selectedMentorName });
+  //   console.log(selectedMentorName.mentoremail);
+  //   this.registerForm.get('mentoremail')?.setValue(selectedMentor.mentoremail);
+  //   this.test = selectedMentor.mentoremail;
+  //   this.registerForm.get('mentorDetails')?.setValue(selectedMentor);
+  // }
+
   selectmentor(mentor: any) {
     const selectedMentorName = this.registerForm.get('mentor')?.value;
     const selectedMentor = this.mentors.find((mentors: any) => { return mentors.mentorname === selectedMentorName });
     console.log(selectedMentor);
     this.registerForm.get('mentoremail')?.setValue(selectedMentor.mentoremail);
     this.test = selectedMentor.mentoremail;
+    this.registerForm.get('mentorDetails')?.setValue(selectedMentor);
   }
 
   reset() {
@@ -182,7 +193,8 @@ export class AddComponent implements OnInit {
       startDate: this.registerForm.get('startDate')?.value,
       endDate: this.registerForm.get('endDate')?.value,
       mentor: this.selectedMentor,
-      location: this.registerForm.get('location')?.value
+      location: this.registerForm.get('location')?.value, 
+      mentorDetails: this.registerForm.get('mentorDetails')?.value
     };
   
     this.internService.sendEmail(mailStructure).subscribe(
